@@ -29,3 +29,4 @@
 ## **联系方式**
 - **GitHub**: [项目GitHub链接](https://github.com/Das-DDR-Rumia/BNDESCS_MBWB)
 - **邮箱**: [liujianwen114514@gmail.com](liujianwen114514@gmail.com)
+- **十一实验化学社官方GitHub地址**：[Goto BNDES-CS](https://github.com/BNDES-CS/BNDES-CS)
