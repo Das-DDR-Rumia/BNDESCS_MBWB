@@ -57,6 +57,38 @@ triggers = [
   ]),
   
 
+## Fixed Native 
+  (1, 0, ti_once, [], 
+  [
+    (try_for_range, ":troop_no", original_kingdom_heroes_begin, active_npcs_end),
+      (store_attribute_level, ":str", ":troop_no", ca_strength),
+      (store_attribute_level, ":agi", ":troop_no", ca_agility),
+      (store_attribute_level, ":int", ":troop_no", ca_intelligence),
+      (store_attribute_level, ":cha", ":troop_no", ca_charisma),
+      (try_begin),
+        (lt, ":str", 15),
+        (store_sub, ":value_raise", 15, ":str"),
+        (troop_raise_attribute, ":troop_no", ca_strength, ":value_raise"),
+      (try_end),
+      (try_begin),
+        (lt, ":agi", 14),
+        (store_sub, ":value_raise", 14, ":agi"),
+        (troop_raise_attribute, ":troop_no", ca_agility, ":value_raise"),
+      (try_end),
+      (try_begin),
+        (lt, ":int", 8),
+        (store_sub, ":value_raise", 8, ":int"),
+        (troop_raise_attribute, ":troop_no", ca_intelligence, ":value_raise"),
+      (try_end),
+      (try_begin),
+        (lt, ":cha", 16),
+        (store_sub, ":value_raise", 16, ":cha"),
+        (troop_raise_attribute, ":troop_no", ca_charisma, ":value_raise"),
+      (try_end),
+    (try_end),
+  ]),
+## Fixed Native 
+  
 #############
 
 #Captivity:

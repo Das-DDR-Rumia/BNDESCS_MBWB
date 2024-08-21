@@ -50,6 +50,3 @@ tableau_positioning_selection = 48
 tableau_retired_troop_alpha_mask = 49
 tableau_retired_troop_color = 50
 tableau_retirement_troop = 51
-tableau_coop_companion_select_alpha_mask = 52
-tableau_coop_companion_select_color = 53
-tableau_coop_companion_select_0 = 54

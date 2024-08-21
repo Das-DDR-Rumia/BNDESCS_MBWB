@@ -428,7 +428,7 @@ simple_triggers = [
         (try_end),
       (try_end),
       (val_add, ":cur_morale", ":dif_to_add"),
-      (party_set_morale, "p_main_party", ":cur_morale"),      
+      (party_set_morale, "p_main_party", ":cur_morale"),    
     ]),
   
 
@@ -2346,6 +2346,10 @@ simple_triggers = [
 #NPC companion changes end
       (try_end),
     (try_end),
+    
+    ## Fixed Native
+    (call_script, "script_sort_food", "trp_player"),
+    ## Fixed Native
     ]),
 
   # Setting item modifiers for food
@@ -4050,4 +4054,69 @@ simple_triggers = [
    []),
   (24,
    []),
+  (24,
+   []),
+  (24,
+   []),
+   
+  ## Fixed Native 
+  (7,
+    [
+      (try_for_parties, ":party_no"),
+        (neq, ":party_no", "p_main_party"),
+        (neq, ":party_no", "p_temp_party"),
+        (assign, ":continue", 0),
+        (try_begin),
+          (this_or_next|party_slot_eq, ":party_no", slot_party_type, spt_kingdom_hero_party),
+          (party_slot_eq, ":party_no", slot_party_type, spt_kingdom_caravan),
+          (party_is_active, ":party_no"),
+          (assign, ":continue", 1),
+        (else_try),
+          (this_or_next|party_slot_eq, ":party_no", slot_party_type, spt_castle),
+          (party_slot_eq, ":party_no", slot_party_type, spt_town),
+          (neg|party_slot_eq, ":party_no", slot_town_lord, "trp_player"),
+          (assign, ":continue", 1),
+        (try_end),
+        (eq, ":continue", 1),
+        (call_script, "script_sort_party_by_troop_level", ":party_no"),
+      (try_end),
+    ]),
+   
+   (24,
+     [
+       (try_for_range, ":cur_village", villages_begin, villages_end),
+         (party_get_slot, ":cur_bound_center", ":cur_village", slot_village_bound_center),
+         (store_faction_of_party, ":village_faction", ":cur_village"),
+         (store_faction_of_party, ":town_faction", ":cur_bound_center"),
+         (neq,  ":village_faction", ":town_faction"),
+         (call_script, "script_give_center_to_faction", ":cur_village", ":town_faction"),
+       (try_end),
+     ]),
+     
+   (3,
+    [
+      (try_for_range, ":troop_no", heroes_begin, heroes_end),
+        (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+        (troop_get_slot, ":troop_party_no", ":troop_no", slot_troop_leaded_party),
+        (ge, ":troop_party_no", 1),
+        (party_is_active, ":troop_party_no"),
+        (party_get_attached_to, ":cur_attached_town", ":troop_party_no"),
+        (ge, ":cur_attached_town", 1),
+        (call_script, "script_get_relation_between_parties", ":cur_attached_town", ":troop_party_no"),
+        (assign, ":relation", reg0),
+        (store_faction_of_party, ":troop_faction_no", ":troop_party_no"),
+        (call_script, "script_get_closest_walled_center_of_faction", ":troop_party_no", ":troop_faction_no"),
+        (assign, ":closest_center", reg0),
+        (try_begin),
+          (this_or_next|lt, ":relation", 0),
+          (this_or_next|eq, ":closest_center", -1),
+          (neg|faction_slot_eq, ":troop_faction_no", slot_faction_state, sfs_active),
+          (party_detach, ":troop_party_no"),
+          (call_script, "script_party_set_ai_state", ":troop_party_no",  spai_patrolling_around_center, ":cur_attached_town"),
+        (try_end),
+      (try_end),
+     ]),
+     
+  
+  ## Fixed Native 
 ]

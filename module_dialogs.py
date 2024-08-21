@@ -4467,6 +4467,46 @@ dialogs = [
 ##                    (assign, "$disable_npc_complaints", 1),
 ##          ]],
 
+ ## Fixed Native 
+  [anyone,"event_triggered", [
+    (eq, "$talk_context", tc_rebel_thanks),
+    (store_conversation_troop, "$g_talk_troop"),
+	(is_between, "$g_talk_troop", pretenders_begin, pretenders_end),	
+	
+    (troop_get_slot, ":old_faction", "$g_talk_troop", slot_troop_original_faction),
+    (str_store_faction_name, s3, ":old_faction"),
+    (str_store_string, s6, "@{playername}, when we started our long walk, few people had the courage to support me.\
+ And fewer still would be willing to put their lives at risk for my cause.\
+ But you didn't hesitate for a moment in throwing yourself at my enemies.\
+ We have gone through a lot together, and there were times I came close to losing all hope.\
+ But with God's help, we prevailed. It is now time for me to leave your company and take what's rightfully mine.\
+ From now on, I will carry out the great responsibility of ruling {s3}.\
+ There still lie many challanges ahead and I count on your help in overcoming those.\
+ And of course, you will always remain as my foremost vassal."),
+    ],
+   "{s6}", "rebel_thanks_answer",
+   [   
+     (unlock_achievement, ACHIEVEMENT_KINGMAKER),
+     (call_script, "script_end_quest", "qst_rebel_against_kingdom"),
+
+     (try_begin),
+       (troop_get_type, ":is_female", "trp_player"),
+       (eq, ":is_female", 1),
+
+       (troop_get_type, ":is_female", "$g_talk_troop"),
+       (eq, ":is_female", 1),	   
+
+       (unlock_achievement, ACHIEVEMENT_GIRL_POWER),
+     (try_end),
+	 ]],
+
+  [anyone|plyr,"rebel_thanks_answer", [], "It was an honour to fight for your cause, {reg65?madame:my lord}.", "rebel_thanks_answer_2", []],
+  [anyone|plyr,"rebel_thanks_answer", [], "You will always have my loyal support, {reg65?my lady:sir}.", "rebel_thanks_answer_2", []],
+
+  [anyone,"rebel_thanks_answer_2", [], "I will miss living this life of adventure with you, but my duties await me. So... farewell for now, {playername}.\
+ I hope I'll see you again soon.", "close_window", []],
+ ## Fixed Native 
+
   [anyone, "event_triggered", [
                      (eq, "$npc_map_talk_context", slot_troop_woman_to_woman_string), 
                      (store_conversation_troop, "$map_talk_troop"),
@@ -4532,44 +4572,45 @@ dialogs = [
       ],  "{s5}", "close_window", [
           ]],
 
-  [anyone,"event_triggered", [
-    (eq, "$talk_context", tc_rebel_thanks),
-    (store_conversation_troop, "$g_talk_troop"),
-	(is_between, "$g_talk_troop", pretenders_begin, pretenders_end),	
+ ## Fixed Native 
+  # [anyone,"event_triggered", [
+    # (eq, "$talk_context", tc_rebel_thanks),
+    # (store_conversation_troop, "$g_talk_troop"),
+	# (is_between, "$g_talk_troop", pretenders_begin, pretenders_end),	
 	
-    (troop_get_slot, ":old_faction", "$g_talk_troop", slot_troop_original_faction),
-    (str_store_faction_name, s3, ":old_faction"),
-    (str_store_string, s6, "@{playername}, when we started our long walk, few people had the courage to support me.\
- And fewer still would be willing to put their lives at risk for my cause.\
- But you didn't hesitate for a moment in throwing yourself at my enemies.\
- We have gone through a lot together, and there were times I came close to losing all hope.\
- But with God's help, we prevailed. It is now time for me to leave your company and take what's rightfully mine.\
- From now on, I will carry out the great responsibility of ruling {s3}.\
- There still lie many challanges ahead and I count on your help in overcoming those.\
- And of course, you will always remain as my foremost vassal."),
-    ],
-   "{s6}", "rebel_thanks_answer",
-   [   
-     (unlock_achievement, ACHIEVEMENT_KINGMAKER),
-     (call_script, "script_end_quest", "qst_rebel_against_kingdom"),
+    # (troop_get_slot, ":old_faction", "$g_talk_troop", slot_troop_original_faction),
+    # (str_store_faction_name, s3, ":old_faction"),
+    # (str_store_string, s6, "@{playername}, when we started our long walk, few people had the courage to support me.\
+ # And fewer still would be willing to put their lives at risk for my cause.\
+ # But you didn't hesitate for a moment in throwing yourself at my enemies.\
+ # We have gone through a lot together, and there were times I came close to losing all hope.\
+ # But with God's help, we prevailed. It is now time for me to leave your company and take what's rightfully mine.\
+ # From now on, I will carry out the great responsibility of ruling {s3}.\
+ # There still lie many challanges ahead and I count on your help in overcoming those.\
+ # And of course, you will always remain as my foremost vassal."),
+    # ],
+   # "{s6}", "rebel_thanks_answer",
+   # [   
+     # (unlock_achievement, ACHIEVEMENT_KINGMAKER),
+     # (call_script, "script_end_quest", "qst_rebel_against_kingdom"),
 
-     (try_begin),
-       (troop_get_type, ":is_female", "trp_player"),
-       (eq, ":is_female", 1),
+     # (try_begin),
+       # (troop_get_type, ":is_female", "trp_player"),
+       # (eq, ":is_female", 1),
 
-       (troop_get_type, ":is_female", "$g_talk_troop"),
-       (eq, ":is_female", 1),	   
+       # (troop_get_type, ":is_female", "$g_talk_troop"),
+       # (eq, ":is_female", 1),	   
 
-       (unlock_achievement, ACHIEVEMENT_GIRL_POWER),
-     (try_end),
-	 ]],
+       # (unlock_achievement, ACHIEVEMENT_GIRL_POWER),
+     # (try_end),
+	 # ]],
 
-  [anyone|plyr,"rebel_thanks_answer", [], "It was an honour to fight for your cause, {reg65?madame:my lord}.", "rebel_thanks_answer_2", []],
-  [anyone|plyr,"rebel_thanks_answer", [], "You will always have my loyal support, {reg65?my lady:sir}.", "rebel_thanks_answer_2", []],
+  # [anyone|plyr,"rebel_thanks_answer", [], "It was an honour to fight for your cause, {reg65?madame:my lord}.", "rebel_thanks_answer_2", []],
+  # [anyone|plyr,"rebel_thanks_answer", [], "You will always have my loyal support, {reg65?my lady:sir}.", "rebel_thanks_answer_2", []],
 
-  [anyone,"rebel_thanks_answer_2", [], "I will miss living this life of adventure with you, but my duties await me. So... farewell for now, {playername}.\
- I hope I'll see you again soon.", "close_window", []],
-
+  # [anyone,"rebel_thanks_answer_2", [], "I will miss living this life of adventure with you, but my duties await me. So... farewell for now, {playername}.\
+ # I hope I'll see you again soon.", "close_window", []],
+ ## Fixed Native 
 
  
   [anyone, "event_triggered", [
@@ -9843,7 +9884,7 @@ dialogs = [
   (quest_slot_eq, "qst_denounce_lord", slot_quest_giver_troop, "$g_talk_troop"), 
   (this_or_next|check_quest_succeeded, "qst_denounce_lord"),
 	(check_quest_failed, "qst_denounce_lord"),
-  (quest_get_slot, ":target_troop", "qst_denounce_lord", slot_quest_giver_troop), 
+  (quest_get_slot, ":target_troop", "qst_denounce_lord", slot_quest_target_troop), ## Fixed Native
   (str_store_troop_name, s4, ":target_troop"),	
   ],
     "I did as you suggested, and denounced {s4}", "denounce_lord_results"  ,

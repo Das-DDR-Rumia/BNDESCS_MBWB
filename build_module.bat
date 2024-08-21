@@ -1,4 +1,10 @@
 @echo off
+@del Process_Log.txt
+echo Getting Misc Files .........
+copy ".\misc files\*.*" ".\" >>Process_Log.txt
+echo Start Processing...
+echo ______________________________
+echo.
 python process_init.py
 python process_global_variables.py
 python process_strings.py
@@ -29,7 +35,13 @@ python process_dialogs.py
 python process_global_variables_unused.py
 python process_postfx.py
 @del *.pyc
+@del header_*.py
+copy ".\ID_*.py" ".\misc files\" >>Process_Log.txt
+@del ID_*.py
+@del process_*.py
 echo.
+echo All Finish ...
+echo Cleaning up...
 echo ______________________________
 echo.
 echo Script processing has ended.

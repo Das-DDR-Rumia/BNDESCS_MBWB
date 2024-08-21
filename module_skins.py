@@ -180,7 +180,7 @@ skins = [
 #     ("womanface_midage",0xffe5eaf0,["hair_black","hair_brunette","hair_red","hair_white"],[0xffffcded, 0xffbbcded, 0xff99eebb]),
      ],#woman_face_textures
     [(voice_die,"snd_woman_die"),(voice_hit,"snd_woman_hit"),(voice_yell,"snd_woman_yell")], #voice sounds
-    "skel_human", 1.0,
+    "skel_human", 0.95, ## Fixed Native 
     psys_game_blood,psys_game_blood_2,
   ),
   

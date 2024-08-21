@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from header_game_menus import *
 from header_parties import *
 from header_items import *
@@ -38,29 +37,30 @@ from module_constants import *
 
 game_menus = [
   ("start_game_0",menu_text_color(0xFF000000)|mnf_disable_all_keys,
-    "This is a test for BNDES Chemical Club Mod, have fun :) ",
+    "Welcome, adventurer, to Mount and Blade: Warband. Before beginning the game you must create your character. Remember that in the traditional medieval society depicted in the game, war and politics are usually dominated by male members of the nobility. That does not however mean that you should not choose to play a female character, or one who is not of noble birth. Male nobles may have a somewhat easier start, but women and commoners can attain all of the same goals -- and in fact may have a much more interesting if more challenging early game.",
     "none",
     [],
     [
-     ("wow",[],"Id Love It...",
-       [
-       # (jump_to_menu, "mnu_start_game_1"),#中文
-       # """
-       # 1.场景 scn_test_battle(jump_to_scene)
-       # 2.场景触发器 lead_charge_2(set_jump_mission)
-       # 3.玩家生成 set_visitor(op)trp_player
-       # """
-        (jump_to_scene,"scn_test_battle"),
-        (set_jump_mission,"mt_lead_charge_2"),
-        (set_visitor,0,"trp_player"),
-        (change_screen_mission)
-        
+     ("continue",[],"Continue...",
+       [(jump_to_menu, "mnu_start_game_1"),
+        (troop_add_gold,"trp_player",500),
+        (troop_add_item,"trp_player","itm_mk4b_kai",0),
+        (troop_add_item,"trp_player","itm_ammo1",0),
+        (troop_add_item,"trp_player","itm_ammo1",0),
+        (troop_add_item,"trp_player","itm_ammo1",0),
+        (troop_add_item,"trp_player","itm_mk2rv",0),
+        (troop_add_item,"trp_player","itm_ammo",0),
+        (troop_add_item,"trp_player","itm_im1",0),
+        (troop_add_item,"trp_player","itm_im2",0),
+        (troop_add_item,"trp_player","itm_smoked_fish",0),
+        (troop_add_item,"trp_player","itm_smoked_fish",0),
+        (party_add_members,"p_main_party","trp_rhodok_mk4b_kai",2),
+        (party_add_members,"p_main_party","trp_rhodok_tribesman",1),
+        (party_add_members,"p_main_party","trp_rhodok_im2",2),
+        (party_set_bandit_attraction,"p_main_party",90),
         ]
+        
        ),
-     # ("continue",[],"Continue...",
-       # [(jump_to_menu, "mnu_start_game_1"),
-        # ]
-       # ),
       ("go_back",[],"Go back",
        [
          (change_screen_quit),
@@ -77,45 +77,45 @@ game_menus = [
     "none",
     [],
     [
-      ("town_1",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Praven, in the Kingdom of Swadia.",
-       [
-         (assign, "$current_town", "p_town_6"),
-         (assign, "$g_starting_town", "$current_town"),
-         (assign, "$g_journey_string", "str_journey_to_praven"),
-		 (jump_to_menu, "mnu_start_phase_2_5"),
+#      ("town_1",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Praven, in the Kingdom of Swadia.",
+#       [
+#         (assign, "$current_town", "p_town_6"),
+#         (assign, "$g_starting_town", "$current_town"),
+#         (assign, "$g_journey_string", "str_journey_to_praven"),
+#		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-       ]),
+#       ]),
        
-      ("town_2",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Reyvadin, in the Kingdom of the Vaegirs.",
-       [
-         (assign, "$current_town", "p_town_8"),
-         (assign, "$g_starting_town", "$current_town"),
-         (assign, "$g_journey_string", "str_journey_to_reyvadin"),
-		 (jump_to_menu, "mnu_start_phase_2_5"),
+#      ("town_2",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Reyvadin, in the Kingdom of the Vaegirs.",
+#       [
+#         (assign, "$current_town", "p_town_8"),
+#         (assign, "$g_starting_town", "$current_town"),
+#         (assign, "$g_journey_string", "str_journey_to_reyvadin"),
+#		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-       ]),
+#       ]),
        
-      ("town_3",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Tulga, in the Khergit Khanate.",
-       [
-         (assign, "$current_town", "p_town_10"),
-         (assign, "$g_starting_town", "$current_town"),
-         (assign, "$g_journey_string", "str_journey_to_tulga"),
-		 (jump_to_menu, "mnu_start_phase_2_5"),
+#      ("town_3",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Tulga, in the Khergit Khanate.",
+#       [
+#         (assign, "$current_town", "p_town_10"),
+#         (assign, "$g_starting_town", "$current_town"),
+#         (assign, "$g_journey_string", "str_journey_to_tulga"),
+#		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-       ]),
+#       ]),
        
-      ("town_4",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Sargoth, in the Kingdom of the Nords.",
-       [
-         (assign, "$current_town", "p_town_1"),
-         (assign, "$g_starting_town", "$current_town"),
-         (assign, "$g_journey_string", "str_journey_to_sargoth"),
-		 (jump_to_menu, "mnu_start_phase_2_5"),
+#      ("town_4",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Sargoth, in the Kingdom of the Nords.",
+#       [
+#         (assign, "$current_town", "p_town_1"),
+#         (assign, "$g_starting_town", "$current_town"),
+#         (assign, "$g_journey_string", "str_journey_to_sargoth"),
+#		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-       ]),
+#       ]),
        
       ("town_5",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Jelkala, in the Kingdom of the Rhodoks.",
        [
@@ -127,15 +127,15 @@ game_menus = [
 #         (change_screen_return),
        ]),
        
-      ("town_6",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Shariz, in the Sarranid Sultanate.",
-       [
-         (assign, "$current_town", "p_town_19"),
-         (assign, "$g_starting_town", "$current_town"),
-         (assign, "$g_journey_string", "str_journey_to_shariz"),
-		 (jump_to_menu, "mnu_start_phase_2_5"),
+#      ("town_6",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Shariz, in the Sarranid Sultanate.",
+#       [
+#         (assign, "$current_town", "p_town_19"),
+#         (assign, "$g_starting_town", "$current_town"),
+#         (assign, "$g_journey_string", "str_journey_to_shariz"),
+#		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-       ]),
+#       ]),
 
 	   
       ("tutorial_cheat",[(eq,1,0)],"{!}CHEAT!",
@@ -561,7 +561,13 @@ game_menus = [
        [(jump_to_menu, "mnu_faction_orders"),
         ]
        ),
-	   
+      ## Fixed Native
+      ("action_view_troop_trees",[],"View troop trees.",
+       [
+        (start_presentation, "prsnt_faction_troop_trees"),
+        ]
+       ),
+      ## Fixed Native
       ("view_character_report",[],"View character report.",
        [(jump_to_menu, "mnu_character_report"),
         ]
@@ -3074,7 +3080,7 @@ game_menus = [
 	   ]
        ),	   
 
-      ("camp_cheat_find_item",[], "Change weather..",
+      ("camp_cheat_change_weather",[], "Change weather..", ## Fixed Native 
        [
          (jump_to_menu, "mnu_cheat_change_weather"),
 	   ]
@@ -3792,8 +3798,16 @@ game_menus = [
             (display_message, "str_s1_joined_battle_friend"),
             # Let village party join battle at your side
           (try_end),
-                    
-          (call_script, "script_let_nearby_parties_join_current_battle", 0, 0),
+          
+          ## Fixed Native 
+          #(call_script, "script_let_nearby_parties_join_current_battle", 0, 0),
+          (try_begin),
+            (party_get_template_id, ":template_id", "$g_enemy_party"),
+            (neq, ":template_id", "pt_routed_warriors"),
+            (call_script, "script_let_nearby_parties_join_current_battle", 0, 0),
+          (try_end),
+          ## Fixed Native 
+          
           (call_script, "script_encounter_init_variables"),
           (assign, "$encountered_party_hostile", 0),
           (assign, "$encountered_party_friendly", 0),
@@ -4646,10 +4660,14 @@ game_menus = [
             (call_script, "script_move_members_with_ratio", "p_temp_party", "p_temp_party_2"),
         
             #TODO: This doesn't handle prisoners if our allies joined battle after us.
-            (try_begin),
-              (gt, "$g_ally_party", 0),
-              (distribute_party_among_party_group, "p_temp_party_2", "$g_ally_party"),
-            (try_end),
+            
+            ## Fixed Native 
+            # (try_begin),
+              # (gt, "$g_ally_party", 0),
+              # (distribute_party_among_party_group, "p_temp_party_2", "$g_ally_party"),
+            # (try_end),
+            ## Fixed Native 
+            
             #next if there's anything left, we'll open up the party exchange screen and offer them to the player.
           (try_end),
           (party_get_num_companions, ":num_rescued_prisoners", "p_temp_party"),
@@ -4662,6 +4680,43 @@ game_menus = [
         (else_try),          
           (eq, "$loot_screen_shown", 0),
           (assign, "$loot_screen_shown", 1),
+          
+          ## Fixed Native 
+          (call_script, "script_party_add_party", "p_temp_party", "p_temp_party_2"),
+          (try_begin),
+            (gt, "$g_ally_party", 0),
+            (try_begin),
+              (party_get_num_attached_parties, ":num_quick_attachments", "p_main_party"),
+              (gt, ":num_quick_attachments", 0),
+              (try_for_range_backwards, ":attached_party_rank", 0, ":num_quick_attachments"),
+                (party_get_attached_party_with_rank, ":attached_party", "p_main_party", ":attached_party_rank"),
+                (gt, ":attached_party", -1),
+                (party_detach, ":attached_party"),
+                (party_attach_to_party, ":attached_party", "$g_ally_party"),
+              (try_end),
+            (try_end),
+            (distribute_party_among_party_group, "p_temp_party", "$g_ally_party"),
+            (call_script, "script_dismiss_party_group", "$g_ally_party"),
+          (else_try),
+            (party_get_num_attached_parties, ":num_quick_attachments", "p_main_party"),
+            (gt, ":num_quick_attachments", 0),
+            (party_get_attached_party_with_rank, ":root_helper_party", "p_main_party", 0),
+            (party_detach, ":root_helper_party"),
+            (try_begin),
+              (party_get_num_attached_parties, ":num_quick_attachments", "p_main_party"),
+              (gt, ":num_quick_attachments", 0),
+              (try_for_range_backwards, ":attached_party_rank", 0, ":num_quick_attachments"),
+                (party_get_attached_party_with_rank, ":attached_party", "p_main_party", ":attached_party_rank"),
+                (gt, ":attached_party", -1),
+                (party_detach, ":attached_party"),
+                (party_attach_to_party, ":attached_party", ":root_helper_party"),
+              (try_end),
+            (try_end),
+            (distribute_party_among_party_group, "p_temp_party", ":root_helper_party"),
+            (call_script, "script_dismiss_party_group", ":root_helper_party"),
+          (try_end), 
+          ## Fixed Native 
+          
 #          (try_begin),
 #            (gt, "$g_ally_party", 0),
 #            (call_script, "script_party_add_party", "$g_ally_party", "p_temp_party"), #Add remaining prisoners to ally TODO: FIX it.
@@ -5865,6 +5920,24 @@ game_menus = [
       ("request_meeting_commander",[],
        "Request a meeting with someone.",
        [
+       ## Fixed Native 
+       # find all possible npcs, fill them into temp_array_a
+        (assign, ":slot_no", 0),
+        (try_for_range, ":troop_no", active_npcs_begin, active_npcs_end),
+          (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+          (call_script, "script_get_troop_attached_party", ":troop_no"),
+          (eq, "$g_encountered_party", reg0),
+          (troop_set_slot, "trp_temp_array_a", ":slot_no", ":troop_no"),
+          (val_add, ":slot_no", 1),
+        (try_end),
+        (assign, "$num_castle_meeting_troops", ":slot_no"), # $temp_3: total slots
+        
+        (assign, "$temp", 0), # $temp: cur page
+        (store_div, ":num_pages", "$num_castle_meeting_troops", 6),
+        (store_mod, ":mod", "$num_castle_meeting_troops", 6),
+        (val_min, ":mod", 1),
+        (store_add, "$temp_2", ":num_pages", ":mod"), # $temp_2: total pages
+       ## Fixed Native 
           (jump_to_menu, "mnu_castle_meeting"),
        ]),
       ("guard_leave",[],
@@ -5899,48 +5972,102 @@ game_menus = [
        [(jump_to_menu,"mnu_castle_guard")]),
     ]
   ),
+  
+  ## Fixed Native 
+  # (
+    # "castle_meeting",mnf_scale_picture,
+    # "With whom do you want to meet?",
+    # "none",
+    # [
+        # (assign, "$num_castle_meeting_troops", 0),
+        # (try_for_range, ":troop_no", active_npcs_begin, active_npcs_end),
+          # (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+          # (call_script, "script_get_troop_attached_party", ":troop_no"),
+          # (eq, "$g_encountered_party", reg0),
+          # (troop_set_slot, "trp_temp_array_a", "$num_castle_meeting_troops", ":troop_no"),
+          # (val_add, "$num_castle_meeting_troops", 1),
+        # (try_end),
+		# (call_script, "script_set_town_picture"),
+    # ],
+    # [
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 0),(troop_get_slot, ":troop_no", "trp_temp_array_a", 0),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 0),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 1),(troop_get_slot, ":troop_no", "trp_temp_array_a", 1),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 1),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 2),(troop_get_slot, ":troop_no", "trp_temp_array_a", 2),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 2),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 3),(troop_get_slot, ":troop_no", "trp_temp_array_a", 3),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 3),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 4),(troop_get_slot, ":troop_no", "trp_temp_array_a", 4),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 4),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 5),(troop_get_slot, ":troop_no", "trp_temp_array_a", 5),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 5),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 6),(troop_get_slot, ":troop_no", "trp_temp_array_a", 6),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 6),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 7),(troop_get_slot, ":troop_no", "trp_temp_array_a", 7),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 7),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 8),(troop_get_slot, ":troop_no", "trp_temp_array_a", 8),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 8),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      # ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 9),(troop_get_slot, ":troop_no", "trp_temp_array_a", 9),(str_store_troop_name, s5, ":troop_no")],
+       # "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 9),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      
+      # ("forget_it",[],
+       # "Forget it.",
+       # [(jump_to_menu,"mnu_castle_guard")]),
+    # ]
+  # ),
+
   (
     "castle_meeting",mnf_scale_picture,
     "With whom do you want to meet?",
     "none",
     [
-        (assign, "$num_castle_meeting_troops", 0),
-        (try_for_range, ":troop_no", active_npcs_begin, active_npcs_end),
-          (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
-          (call_script, "script_get_troop_attached_party", ":troop_no"),
-          (eq, "$g_encountered_party", reg0),
-          (troop_set_slot, "trp_temp_array_a", "$num_castle_meeting_troops", ":troop_no"),
-          (val_add, "$num_castle_meeting_troops", 1),
-        (try_end),
-		(call_script, "script_set_town_picture"),
+      (call_script, "script_set_town_picture"),
     ],
     [
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 0),(troop_get_slot, ":troop_no", "trp_temp_array_a", 0),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 0),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 1),(troop_get_slot, ":troop_no", "trp_temp_array_a", 1),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 1),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 2),(troop_get_slot, ":troop_no", "trp_temp_array_a", 2),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 2),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 3),(troop_get_slot, ":troop_no", "trp_temp_array_a", 3),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 3),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 4),(troop_get_slot, ":troop_no", "trp_temp_array_a", 4),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 4),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 5),(troop_get_slot, ":troop_no", "trp_temp_array_a", 5),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 5),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 6),(troop_get_slot, ":troop_no", "trp_temp_array_a", 6),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 6),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 7),(troop_get_slot, ":troop_no", "trp_temp_array_a", 7),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 7),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 8),(troop_get_slot, ":troop_no", "trp_temp_array_a", 8),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 8),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 9),(troop_get_slot, ":troop_no", "trp_temp_array_a", 9),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 9),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      
+      ("castle_meeting_prev",
+        [
+          (gt, "$temp", 0), # not the first page
+        ],"Previous page", 
+        [
+          (val_sub, "$temp", 1),
+          (val_clamp, "$temp", 0, "$temp_2"),
+          (jump_to_menu, "mnu_castle_meeting"),
+        ]),
+    ]+[
+      ("castle_meeting_character"+str(x+1),
+        [
+          (store_mul, ":dest_slot", "$temp", 6),
+          (val_add, ":dest_slot", x),
+          (lt, ":dest_slot", "$num_castle_meeting_troops"),
+          (troop_get_slot, ":dest_npc", "trp_temp_array_a", ":dest_slot"),
+          (str_store_troop_name, s5, ":dest_npc"),
+        ], "{s5}.",
+        [
+          (store_mul, ":dest_slot", "$temp", 6),
+          (val_add, ":dest_slot", x),
+          (troop_get_slot, ":dest_npc", "trp_temp_array_a", ":dest_slot"),
+          (assign, "$castle_meeting_selected_troop", ":dest_npc"),
+          (jump_to_menu,"mnu_castle_meeting_selected"),
+        ]) for x in range(0, 6)
+    ]+[
+      ("castle_meeting_next",
+        [
+          (store_sub, ":last_page", "$temp_2", 1),
+          (lt, "$temp", ":last_page"), # not the last page
+        ],"Next page", 
+        [
+          (val_add, "$temp", 1),
+          (val_clamp, "$temp", 0, "$temp_2"),
+          (jump_to_menu, "mnu_castle_meeting"),
+        ]),
       ("forget_it",[],
        "Forget it.",
        [(jump_to_menu,"mnu_castle_guard")]),
     ]
   ),
+  ## Fixed Native 
+  
   (
     "castle_meeting_selected",0,
     "Your request for a meeting is relayed inside, and finally {s6} appears in the courtyard to speak with you.",
@@ -8454,7 +8581,7 @@ game_menus = [
           #(reset_item_probabilities,100),
 
 		  #begin of changes
-		  (party_get_slot, ":bound_town", slot_village_bound_center, "$current_town"),
+		  (party_get_slot, ":bound_town", "$current_town", slot_village_bound_center), ## Fixed Native 
           (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
           (reset_item_probabilities,100),
           (assign, ":total_probability", 0),
@@ -12851,10 +12978,190 @@ game_menus = [
   
   
   
-  
+  ## Fixed Native 
+  # (
+    # "notification_player_faction_active",0,
+    # "You now possess land in your name, without being tied to any kingdom. This makes you a monarch in your own right, with your court temporarily located at {s12}. However, the other kings in Calradia will at first consider you a threat, for if any upstart warlord can grab a throne, then their own legitimacy is called into question.^^You may find it desirable at this time to pledge yourself to an existing kingdom. If you want to continue as a sovereign monarch, then your first priority should be to establish an independent right to rule. You can establish your right to rule through several means -- marrying into a high-born family, recruiting new lords, governing your lands, treating with other kings, or dispatching your companions on missions.^^At any rate, your first step should be to appoint a chief minister from among your companions, to handle affairs of state. Different companions have different capabilities.^You may appoint new ministers from time to time. You may also change the location of your court, by speaking to the minister.",
+    # "none",
+    # [
+      # (set_fixed_point_multiplier, 100),
+      # (position_set_x, pos0, 65),
+      # (position_set_y, pos0, 30),
+      # (position_set_z, pos0, 170),
+      # (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "fac_player_supporters_faction", pos0),
+      
+      # (unlock_achievement, ACHIEVEMENT_CALRADIAN_TEA_PARTY),
+      # (play_track, "track_coronation"),
+	  
+	  # (try_for_range, ":walled_center", walled_centers_begin, walled_centers_end),
+	    # (lt, "$g_player_court", walled_centers_begin),
+		# (store_faction_of_party, ":walled_center_faction", ":walled_center"),
+	    # (eq, ":walled_center_faction", "fac_player_supporters_faction"),
+		# (assign, "$g_player_court", ":walled_center"),
+		
+		# (try_begin),
+			# (troop_get_slot, ":spouse", "trp_player", slot_troop_spouse),
+			# (is_between, ":spouse", kingdom_ladies_begin, kingdom_ladies_end),
+			# (troop_set_slot, ":spouse", slot_troop_cur_center, "$g_player_court"),
+		# (try_end),
+		
+		# (str_store_party_name, s12, "$g_player_court"),
+	  # (try_end),
+	  
+      # ],
+    # [
+      # ("appoint_spouse",[
+	  # (troop_slot_ge, "trp_player", slot_troop_spouse, 1),
+	  # (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
+	  # (neg|troop_slot_eq, ":player_spouse", slot_troop_occupation, slto_kingdom_hero),
+	  # (str_store_troop_name, s10, ":player_spouse"),
+	  # ],"Appoint your wife, {s10}...",
+       # [
+	   # (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
+	   # (assign, "$g_player_minister", ":player_spouse"),
+	   # (jump_to_menu, "mnu_minister_confirm"),
+	   # ]),
+
+      # ("appoint_npc1",[
+	  # (main_party_has_troop, "trp_npc1"),
+	  # (str_store_troop_name, s10, "trp_npc1"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc1"),
+	   # (jump_to_menu, "mnu_minister_confirm"),
+	   # ]),
+	   
+      # ("appoint_npc2",[
+	  # (main_party_has_troop, "trp_npc2"),
+	  # (str_store_troop_name, s10, "trp_npc2"),],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc2"),
+	   # (jump_to_menu, "mnu_minister_confirm"),]),
+	   
+      # ("appoint_npc3",[
+	  # (main_party_has_troop, "trp_npc3"),
+	  # (str_store_troop_name, s10, "trp_npc3"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc3"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc4",[
+	  # (main_party_has_troop, "trp_npc4"),
+	  # (str_store_troop_name, s10, "trp_npc4"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc4"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc5",[
+	  # (main_party_has_troop, "trp_npc5"),
+	  # (str_store_troop_name, s10, "trp_npc5"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc5"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc6",[
+	  # (main_party_has_troop, "trp_npc6"),
+	  # (str_store_troop_name, s10, "trp_npc6"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc6"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc7",[
+	  # (main_party_has_troop, "trp_npc7"),
+	  # (str_store_troop_name, s10, "trp_npc7"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc7"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc8",[
+	  # (main_party_has_troop, "trp_npc8"),
+	  # (str_store_troop_name, s10, "trp_npc8"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc8"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc9",[
+	  # (main_party_has_troop, "trp_npc9"),
+	  # (str_store_troop_name, s10, "trp_npc9"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc9"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc10",[ #was npc9
+	  # (main_party_has_troop, "trp_npc10"),
+	  # (str_store_troop_name, s10, "trp_npc10"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc10"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc11",[
+	  # (main_party_has_troop, "trp_npc11"),
+	  # (str_store_troop_name, s10, "trp_npc11"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc11"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc12",[
+	  # (main_party_has_troop, "trp_npc12"),
+	  # (str_store_troop_name, s10, "trp_npc12"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc12"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc13",[
+	  # (main_party_has_troop, "trp_npc13"),
+	  # (str_store_troop_name, s10, "trp_npc13"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc13"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc14",[
+	  # (main_party_has_troop, "trp_npc14"),
+	  # (str_store_troop_name, s10, "trp_npc14"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc14"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc15",[
+	  # (main_party_has_troop, "trp_npc15"),
+	  # (str_store_troop_name, s10, "trp_npc15"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc15"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+	   
+      # ("appoint_npc16",[
+	  # (main_party_has_troop, "trp_npc16"),
+	  # (str_store_troop_name, s10, "trp_npc16"),
+	  # ],"Appoint {s10}",
+       # [
+	   # (assign, "$g_player_minister", "trp_npc16"),
+	   # (jump_to_menu, "mnu_minister_confirm"), ]),
+
+      # ("appoint_default",[],"Appoint a prominent citizen from the area...",
+       # [
+	   # (assign, "$g_player_minister", "trp_temporary_minister"),
+	   # (troop_set_faction, "trp_temporary_minister", "fac_player_supporters_faction"),
+	   # (jump_to_menu, "mnu_minister_confirm"),
+        # ]),				
+     # ]
+  # ),  
+
   (
     "notification_player_faction_active",0,
-    "You now possess land in your name, without being tied to any kingdom. This makes you a monarch in your own right, with your court temporarily located at {s12}. However, the other kings in Calradia will at first consider you a threat, for if any upstart warlord can grab a throne, then their own legitimacy is called into question.^^You may find it desirable at this time to pledge yourself to an existing kingdom. If you want to continue as a sovereign monarch, then your first priority should be to establish an independent right to rule. You can establish your right to rule through several means -- marrying into a high-born family, recruiting new lords, governing your lands, treating with other kings, or dispatching your companions on missions.^^At any rate, your first step should be to appoint a chief minister from among your companions, to handle affairs of state. Different companions have different capabilities.^You may appoint new ministers from time to time. You may also change the location of your court, by speaking to the minister.",
+    "You now possess land in your name, without being tied to any kingdom. This makes you a monarch in your own right, with your court temporarily located at {s12}. However, the other kings in Calradia will at first consider you a threat, for if any upstart warlord can grab a throne, then their own legitimacy is called into question.^^You may find it desirable at this time to pledge yourself to an existing kingdom. If you want to continue as a sovereign monarch, then your first priority should be to establish an independent right to rule. You can establish your right to rule through several means -- marrying into a high-born family, recruiting new lords, governing your lands, treating with other kings, or dispatching your companions on missions.",
     "none",
     [
       (set_fixed_point_multiplier, 100),
@@ -12862,176 +13169,118 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "fac_player_supporters_faction", pos0),
-      
+	  
       (unlock_achievement, ACHIEVEMENT_CALRADIAN_TEA_PARTY),
       (play_track, "track_coronation"),
 	  
 	  (try_for_range, ":walled_center", walled_centers_begin, walled_centers_end),
 	    (lt, "$g_player_court", walled_centers_begin),
-		(store_faction_of_party, ":walled_center_faction", ":walled_center"),
+		  (store_faction_of_party, ":walled_center_faction", ":walled_center"),
 	    (eq, ":walled_center_faction", "fac_player_supporters_faction"),
-		(assign, "$g_player_court", ":walled_center"),
+      (assign, "$g_player_court", ":walled_center"),
 		
-		(try_begin),
-			(troop_get_slot, ":spouse", "trp_player", slot_troop_spouse),
-			(is_between, ":spouse", kingdom_ladies_begin, kingdom_ladies_end),
-			(troop_set_slot, ":spouse", slot_troop_cur_center, "$g_player_court"),
-		(try_end),
-		
-		(str_store_party_name, s12, "$g_player_court"),
+      (try_begin),
+        (troop_get_slot, ":spouse", "trp_player", slot_troop_spouse),
+        (is_between, ":spouse", kingdom_ladies_begin, kingdom_ladies_end),
+        (troop_set_slot, ":spouse", slot_troop_cur_center, "$g_player_court"),
+      (try_end),
+      
+      (str_store_party_name, s12, "$g_player_court"),
 	  (try_end),
 	  
       ],
     [
-      ("appoint_spouse",[
-	  (troop_slot_ge, "trp_player", slot_troop_spouse, 1),
-	  (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
-	  (neg|troop_slot_eq, ":player_spouse", slot_troop_occupation, slto_kingdom_hero),
-	  (str_store_troop_name, s10, ":player_spouse"),
-	  ],"Appoint your wife, {s10}...",
+      ("continue",[],"Continue...",
        [
-	   (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
-	   (assign, "$g_player_minister", ":player_spouse"),
-	   (jump_to_menu, "mnu_minister_confirm"),
-	   ]),
-
-      ("appoint_npc1",[
-	  (main_party_has_troop, "trp_npc1"),
-	  (str_store_troop_name, s10, "trp_npc1"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc1"),
-	   (jump_to_menu, "mnu_minister_confirm"),
-	   ]),
-	   
-      ("appoint_npc2",[
-	  (main_party_has_troop, "trp_npc2"),
-	  (str_store_troop_name, s10, "trp_npc2"),],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc2"),
-	   (jump_to_menu, "mnu_minister_confirm"),]),
-	   
-      ("appoint_npc3",[
-	  (main_party_has_troop, "trp_npc3"),
-	  (str_store_troop_name, s10, "trp_npc3"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc3"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc4",[
-	  (main_party_has_troop, "trp_npc4"),
-	  (str_store_troop_name, s10, "trp_npc4"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc4"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc5",[
-	  (main_party_has_troop, "trp_npc5"),
-	  (str_store_troop_name, s10, "trp_npc5"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc5"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc6",[
-	  (main_party_has_troop, "trp_npc6"),
-	  (str_store_troop_name, s10, "trp_npc6"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc6"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc7",[
-	  (main_party_has_troop, "trp_npc7"),
-	  (str_store_troop_name, s10, "trp_npc7"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc7"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc8",[
-	  (main_party_has_troop, "trp_npc8"),
-	  (str_store_troop_name, s10, "trp_npc8"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc8"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc9",[
-	  (main_party_has_troop, "trp_npc9"),
-	  (str_store_troop_name, s10, "trp_npc9"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc9"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc10",[ #was npc9
-	  (main_party_has_troop, "trp_npc10"),
-	  (str_store_troop_name, s10, "trp_npc10"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc10"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc11",[
-	  (main_party_has_troop, "trp_npc11"),
-	  (str_store_troop_name, s10, "trp_npc11"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc11"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc12",[
-	  (main_party_has_troop, "trp_npc12"),
-	  (str_store_troop_name, s10, "trp_npc12"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc12"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc13",[
-	  (main_party_has_troop, "trp_npc13"),
-	  (str_store_troop_name, s10, "trp_npc13"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc13"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc14",[
-	  (main_party_has_troop, "trp_npc14"),
-	  (str_store_troop_name, s10, "trp_npc14"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc14"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc15",[
-	  (main_party_has_troop, "trp_npc15"),
-	  (str_store_troop_name, s10, "trp_npc15"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc15"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-	   
-      ("appoint_npc16",[
-	  (main_party_has_troop, "trp_npc16"),
-	  (str_store_troop_name, s10, "trp_npc16"),
-	  ],"Appoint {s10}",
-       [
-	   (assign, "$g_player_minister", "trp_npc16"),
-	   (jump_to_menu, "mnu_minister_confirm"), ]),
-
-      ("appoint_default",[],"Appoint a prominent citizen from the area...",
-       [
-	   (assign, "$g_player_minister", "trp_temporary_minister"),
-	   (troop_set_faction, "trp_temporary_minister", "fac_player_supporters_faction"),
-	   (jump_to_menu, "mnu_minister_confirm"),
-        ]),				
+        # find all possible npcs, fill them into temp_array_a
+        (assign, ":slot_no", 0),
+        # player_spouse
+        (try_begin),
+          (troop_slot_ge, "trp_player", slot_troop_spouse, 1),
+          (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
+          (neg|troop_slot_eq, ":player_spouse", slot_troop_occupation, slto_kingdom_hero),
+          (troop_set_slot, "trp_temp_array_a", ":slot_no", ":player_spouse"),
+          (val_add, ":slot_no", 1),
+        (try_end),
+        # npcs
+        (try_for_range, ":cur_npc", companions_begin, companions_end),
+          (main_party_has_troop, ":cur_npc"),
+          (troop_set_slot, "trp_temp_array_a", ":slot_no", ":cur_npc"),
+          (val_add, ":slot_no", 1),
+        (try_end),
+        # trp_temporary_minister
+        (troop_set_slot, "trp_temp_array_a", ":slot_no", "trp_temporary_minister"),
+        (val_add, ":slot_no", 1),
+        (assign, "$temp_3", ":slot_no"), # $temp_3: total slots
+        
+        (assign, "$temp", 0), # $temp: cur page
+        (store_div, ":num_pages", "$temp_3", 6),
+        (store_mod, ":mod", "$temp_3", 6),
+        (val_min, ":mod", 1),
+        (store_add, "$temp_2", ":num_pages", ":mod"), # $temp_2: total pages
+        (jump_to_menu, "mnu_minister_appoint"),
+       ]),
      ]
   ),  
 
+  (
+    "minister_appoint",0,
+    "At any rate, your first step should be to appoint a chief minister from among your companions, to handle affairs of state. Different companions have different capabilities.^You may appoint new ministers from time to time. You may also change the location of your court, by speaking to the minister.",
+    "none",
+    [],
+    [
+      ("minister_appoint_prev",
+        [
+          (gt, "$temp", 0), # not the fist page
+        ],"Previous page", 
+        [
+          (val_sub, "$temp", 1),
+          (val_clamp, "$temp", 0, "$temp_2"),
+          (jump_to_menu, "mnu_minister_appoint"),
+        ]),
+    ]+[("minister_appoint_character"+str(x+1),
+        [
+          (store_mul, ":dest_slot", "$temp", 6),
+          (val_add, ":dest_slot", x),
+          (lt, ":dest_slot", "$temp_3"),
+          (troop_get_slot, ":dest_npc", "trp_temp_array_a", ":dest_slot"),
+          (troop_get_slot, ":player_spouse", "trp_player", slot_troop_spouse),
+          (try_begin),
+            (eq, ":dest_npc", ":player_spouse"),
+            (str_store_troop_name, s10, ":dest_npc"),
+            (str_store_string, s10, "@your wife, {s10}..."),
+          (else_try),	
+            (eq, ":dest_npc", "trp_temporary_minister"),
+            (str_store_string, s10, "@a prominent citizen from the area..."),
+          (else_try),	
+            (str_store_troop_name, s10, ":dest_npc"),
+          (try_end),
+        ], "Appoint {s10}",
+        [
+          (store_mul, ":dest_slot", "$temp", 6),
+          (val_add, ":dest_slot", x),
+          (troop_get_slot, ":dest_npc", "trp_temp_array_a", ":dest_slot"),
+          (assign, "$g_player_minister", ":dest_npc"),
+          (try_begin),
+            (eq, "$g_player_minister", "trp_temporary_minister"),
+            (troop_set_faction, "trp_temporary_minister", "fac_player_supporters_faction"),
+          (try_end),
+          (jump_to_menu, "mnu_minister_confirm"),
+        ]) for x in range(0, 6)]+[
+      ("minister_appoint_next",
+        [
+          (store_sub, ":last_page", "$temp_2", 1),
+          (lt, "$temp", ":last_page"), # not the last page
+        ],"Next page", 
+        [
+          (val_add, "$temp", 1),
+          (val_clamp, "$temp", 0, "$temp_2"),
+          (jump_to_menu, "mnu_minister_appoint"),
+        ]),
+    ]
+  ),
+  ## Fixed Native 
+  
   (
     "minister_confirm",0,
     "{s9}can be found at your court in {s12}. You should consult periodically, to avoid the accumulation of unresolved issues that may sap your authority...",
