@@ -84,7 +84,7 @@
 .\misc files\process_tableau_materials.py
 .\misc files\process_tags_unused.py
 .\misc files\process_troops.py
-已复制        85 个文件。
+       85 file(s) copied.
 .\ID_animations.py
 .\ID_factions.py
 .\ID_info_pages.py
@@ -108,4 +108,4 @@
 .\ID_strings.py
 .\ID_tableau_materials.py
 .\ID_troops.py
-已复制        23 个文件。
+       23 file(s) copied.

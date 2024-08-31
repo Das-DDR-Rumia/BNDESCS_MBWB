@@ -120,6 +120,10 @@ party_templates = [
   ("kingdom_6_reinforcements_b", "{!}kingdom_6_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_sarranid_skirmisher,2,4),(trp_sarranid_veteran_footman,2,3),(trp_sarranid_footman,1,3)]),
   ("kingdom_6_reinforcements_c", "{!}kingdom_6_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_sarranid_horseman,3,5)]),
 
+  ("bndescs_reinforcements_a", "{!}bndescs_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_bndescs_0,5,10),(trp_bndescs_spearman,2,4)]),
+  ("bndescs_reinforcements_b", "{!}bndescs_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_bndescs_mk2rv,2,4),(trp_bndescs_crossbowman,2,3),(trp_bndescs_im2,1,3)]),
+  ("bndescs_reinforcements_c", "{!}bndescs_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_bndescs_mk4b_kai,3,5)]),
+
 ##  ("kingdom_1_reinforcements_a", "kingdom_1_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_swadian_footman,3,7),(trp_swadian_skirmisher,5,10),(trp_swadian_militia,11,26)]),
 ##  ("kingdom_1_reinforcements_b", "kingdom_1_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_swadian_man_at_arms,5,10),(trp_swadian_infantry,5,10),(trp_swadian_crossbowman,3,8)]),
 ##  ("kingdom_1_reinforcements_c", "kingdom_1_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_swadian_knight,2,6),(trp_swadian_sergeant,2,5),(trp_swadian_sharpshooter,2,5)]),
