@@ -575,6 +575,5 @@ script_troop_tree_recursive_backtracking = 573
 script_troop_tree_recursive_detect_max_tier = 574
 script_prsnt_line = 575
 script_get_page_no_of_troop_tree_for_troop_on = 576
-script_bomb_damage = 577
 
 

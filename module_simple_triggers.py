@@ -3877,7 +3877,7 @@ simple_triggers = [
    [
      (call_script, "script_calculate_castle_prosperities_by_using_its_villages"),
 
-     (store_add, ":fac_kingdom_6_plus_one", "fac_kingdom_6", 1),
+     (store_add, ":fac_kingdom_6_plus_one", "fac_bndescs", 1),
 
      (try_for_range, ":faction_1", "fac_kingdom_1", ":fac_kingdom_6_plus_one"),
        (try_for_range, ":faction_2", "fac_kingdom_1", ":fac_kingdom_6_plus_one"),
