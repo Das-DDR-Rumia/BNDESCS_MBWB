@@ -154,6 +154,8 @@ sounds = [
  ("player_hit_by_arrow",sf_priority_10|sf_vol_10, ["player_hit_by_arrow.ogg"]),
  ("pistol_shot",sf_priority_10|sf_vol_10, ["fl_pistol.wav"]),
  ("alofire",sf_priority_10|sf_vol_10, ["ALOFIRE.WAV"]),
+ ("alofiremk2gj",sf_priority_10|sf_vol_10, ["ALOFIREMK2GJ.mp3"]),
+ ("alofiremk3",sf_priority_10|sf_vol_10, ["ALOFIREMK3.mp3"]),
  ("explosive",sf_priority_10|sf_vol_10, ["explosive.mp3"]),
  ("bomb",sf_priority_10|sf_vol_10, ["bomb.wav"]),
  ("man_grunt",sf_priority_6|sf_vol_4, ["man_excercise_1.ogg","man_excercise_2.ogg","man_excercise_4.ogg"]),

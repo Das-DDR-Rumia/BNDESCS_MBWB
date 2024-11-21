@@ -1156,6 +1156,12 @@ scenes = [
 	
   ("village_111",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000130079a3200062d8b0000297c00000def000067b7",
     [],[],"outer_terrain_plain"),
+  ("village_112",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000130079a3200062d8b0000297c00000def000067b7",
+    [],[],"outer_terrain_plain"),
+  ("village_113",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000130079a3200062d8b0000297c00000def000067b7",
+    [],[],"outer_terrain_plain"),
+  ("village_114",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000130079a3200062d8b0000297c00000def000067b7",
+    [],[],"outer_terrain_plain"),
 	
 
 

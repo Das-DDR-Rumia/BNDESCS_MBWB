@@ -46,6 +46,7 @@ game_menus = [
         (troop_add_item,"trp_player","itm_mk2rv",0),
         (troop_add_item,"trp_player","itm_ammo",0),
         (troop_add_item,"trp_player","itm_im1",0),
+        (troop_add_item,"trp_player","itm_ragged_outfit",0),
         (troop_add_item,"trp_player","itm_smoked_fish",0),
         (troop_add_item,"trp_player","itm_smoked_fish",0),
         (party_add_members,"p_main_party","trp_bndescs_0",10),
@@ -68,14 +69,18 @@ game_menus = [
          (troop_add_item,"trp_player","itm_okuu",0),
          (troop_add_item,"trp_player","itm_mk4b_kai",0),
          (troop_add_item,"trp_player","itm_ammo1",0),
-         (troop_add_item,"trp_player","itm_ammo1",0),
-         (troop_add_item,"trp_player","itm_ammo1",0),
+         (troop_add_item,"trp_player","itm_bride_dress",0),
+         (troop_add_item,"trp_player","itm_bride_crown",0),
          (troop_add_item,"trp_player","itm_mk2rv",0),
          (troop_add_item,"trp_player","itm_ammo",0),
          (troop_add_item,"trp_player","itm_im1",0),
          (troop_add_item,"trp_player","itm_im2",0),
          (troop_add_item,"trp_player","itm_smoked_fish",0),
          (troop_add_item,"trp_player","itm_smoked_fish",0),
+         (troop_add_item,"trp_player","itm_smoked_fish",0),
+         (troop_add_item,"trp_player","itm_smoked_fish",0),
+         (troop_add_item,"trp_player","itm_smoked_fish",0),
+         (troop_add_item,"trp_player","itm_bride_shoes",0),
          (party_add_members,"p_main_party","trp_okuu_fumo_thrower",100),
          (party_set_bandit_attraction,"p_main_party",90),
          (troop_add_gold, "trp_player",200000),
@@ -107,45 +112,45 @@ game_menus = [
           (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
           (change_screen_return),
        ]),
-#      ("town_1",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Praven, in the Kingdom of Swadia.",
-#       [
-#         (assign, "$current_town", "p_town_6"),
-#         (assign, "$g_starting_town", "$current_town"),
-#         (assign, "$g_journey_string", "str_journey_to_praven"),
-#		 (jump_to_menu, "mnu_start_phase_2_5"),
+      ("town_1",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Praven, in the Kingdom of Swadia.",
+       [
+         (assign, "$current_town", "p_town_6"),
+         (assign, "$g_starting_town", "$current_town"),
+         (assign, "$g_journey_string", "str_journey_to_praven"),
+		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-#       ]),
+       ]),
        
-#      ("town_2",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Reyvadin, in the Kingdom of the Vaegirs.",
-#       [
-#         (assign, "$current_town", "p_town_8"),
-#         (assign, "$g_starting_town", "$current_town"),
-#         (assign, "$g_journey_string", "str_journey_to_reyvadin"),
-#		 (jump_to_menu, "mnu_start_phase_2_5"),
+      ("town_2",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Reyvadin, in the Kingdom of the Vaegirs.",
+       [
+         (assign, "$current_town", "p_town_8"),
+         (assign, "$g_starting_town", "$current_town"),
+         (assign, "$g_journey_string", "str_journey_to_reyvadin"),
+		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-#       ]),
+       ]),
        
-#      ("town_3",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Tulga, in the Khergit Khanate.",
-#       [
-#         (assign, "$current_town", "p_town_10"),
-#         (assign, "$g_starting_town", "$current_town"),
-#         (assign, "$g_journey_string", "str_journey_to_tulga"),
-#		 (jump_to_menu, "mnu_start_phase_2_5"),
+      ("town_3",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Tulga, in the Khergit Khanate.",
+       [
+         (assign, "$current_town", "p_town_10"),
+         (assign, "$g_starting_town", "$current_town"),
+         (assign, "$g_journey_string", "str_journey_to_tulga"),
+		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-#       ]),
+       ]),
        
-#      ("town_4",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Sargoth, in the Kingdom of the Nords.",
-#       [
-#         (assign, "$current_town", "p_town_1"),
-#         (assign, "$g_starting_town", "$current_town"),
-#         (assign, "$g_journey_string", "str_journey_to_sargoth"),
-#		 (jump_to_menu, "mnu_start_phase_2_5"),
+      ("town_4",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Sargoth, in the Kingdom of the Nords.",
+       [
+         (assign, "$current_town", "p_town_1"),
+         (assign, "$g_starting_town", "$current_town"),
+         (assign, "$g_journey_string", "str_journey_to_sargoth"),
+		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-#       ]),
+       ]),
        
       ("town_5",[(eq, "$current_startup_quest_phase", 0),],"take a ship to Jelkala, in the Kingdom of the Rhodoks.",
        [
@@ -157,15 +162,15 @@ game_menus = [
 #         (change_screen_return),
        ]),
        
-#      ("town_6",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Shariz, in the Sarranid Sultanate.",
-#       [
-#         (assign, "$current_town", "p_town_19"),
-#         (assign, "$g_starting_town", "$current_town"),
-#         (assign, "$g_journey_string", "str_journey_to_shariz"),
-#		 (jump_to_menu, "mnu_start_phase_2_5"),
+      ("town_6",[(eq, "$current_startup_quest_phase", 0),],"join a caravan to Shariz, in the Sarranid Sultanate.",
+       [
+         (assign, "$current_town", "p_town_19"),
+         (assign, "$g_starting_town", "$current_town"),
+         (assign, "$g_journey_string", "str_journey_to_shariz"),
+		 (jump_to_menu, "mnu_start_phase_2_5"),
 #         (party_relocate_near_party, "p_main_party", "$g_starting_town", 2),
 #         (change_screen_return),
-#       ]),
+       ]),
 
 	   
       ("tutorial_cheat",[(eq,1,0)],"{!}CHEAT!",
@@ -986,14 +991,20 @@ game_menus = [
        [
          (troop_set_type,"trp_player", 0),
          (assign,"$character_gender",tf_male),
-         (jump_to_menu,"mnu_start_character_1"),
+         (troop_raise_attribute, "trp_player",ca_strength,6),
+         (troop_raise_attribute, "trp_player",ca_intelligence,3),
+         (troop_set_name, "trp_player", "str_you"),
+         (change_screen_return),
         ]
        ),
       ("start_female",[],"Female",
        [
          (troop_set_type, "trp_player", 1),
          (assign, "$character_gender", tf_female),
-         (jump_to_menu, "mnu_start_character_1"),
+         (troop_raise_attribute, "trp_player",ca_agility,6),
+         (troop_raise_attribute, "trp_player",ca_intelligence,3),
+         (troop_set_name, "trp_player", "str_you"),
+         (change_screen_return),
        ]
        ),
 	  ("go_back",[],"Go back",
@@ -14588,7 +14599,7 @@ game_menus = [
 
   
   ("start_phase_3",mnf_disable_all_keys,
-    "{s16}^^You are exhausted by the time you find the inn in {s1}, and fall asleep quickly. However, you awake before dawn and are eager to explore your surroundings. You venture out onto the streets, which are still deserted. All of a sudden, you hear a sound that stands the hairs of your neck on end -- the rasp of a blade sliding from its scabbard...",
+    "Suddenly, you hear something out of the door, you and some villigers get out from the shop, and saw one bandit in the town...",
     "none",
     [      
       (assign, ":continue", 1),

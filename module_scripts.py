@@ -1005,10 +1005,10 @@ scripts = [
       (assign, "$g_quick_battle_game_type", 0),
       (assign, "$g_quick_battle_troop", quick_battle_troops_begin),
       (assign, "$g_quick_battle_map", quick_battle_scenes_begin),
-      (assign, "$g_quick_battle_team_1_faction", "fac_kingdom_1"),
+      (assign, "$g_quick_battle_team_1_faction", "fac_bndescs"),
       (assign, "$g_quick_battle_team_2_faction", "fac_kingdom_2"),
-      (assign, "$g_quick_battle_army_1_size", 25),
-      (assign, "$g_quick_battle_army_2_size", 25),
+      (assign, "$g_quick_battle_army_1_size", 200),
+      (assign, "$g_quick_battle_army_2_size", 200),
 
       (faction_set_slot, "fac_outlaws", slot_faction_quick_battle_tier_1_infantry, "trp_mountain_bandit"),
       (faction_set_slot, "fac_outlaws", slot_faction_quick_battle_tier_2_infantry, "trp_sea_raider"),
@@ -1052,6 +1052,12 @@ scripts = [
       (faction_set_slot, "fac_kingdom_6", slot_faction_quick_battle_tier_2_archer, "trp_sarranid_archer"),
       (faction_set_slot, "fac_kingdom_6", slot_faction_quick_battle_tier_1_cavalry, "trp_sarranid_horseman"),
       (faction_set_slot, "fac_kingdom_6", slot_faction_quick_battle_tier_2_cavalry, "trp_sarranid_mamluke"),
+      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_1_infantry, "trp_bndescs_spearman"),
+      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_2_infantry, "trp_bndescs_im2"),
+      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_1_archer, "trp_bndescs_mk2rv"),
+      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_2_archer, "trp_bndescs_mk4b_kai"),
+      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_1_cavalry, "trp_shoot_target"),
+      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_2_cavalry, "trp_shoot_target"),
 
       #for multiplayer mode
       (assign, "$g_multiplayer_selected_map", multiplayer_scenes_begin),
