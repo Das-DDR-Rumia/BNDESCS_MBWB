@@ -2154,7 +2154,7 @@ troops = [
     itm_strange_helmet, itm_strange_armor, itm_strange_boots, itm_leather_gloves],
    str_24|agi_25|int_12|cha_12|level(35),wpex(109,1000,132,15,32,1000),knows_riding_3|knows_athletics_5|knows_shield_3|knows_weapon_master_3|knows_power_throw_3|knows_power_strike_2|knows_ironflesh_3,0x0000000e240070cd598bb02b9556428c00000000001eabce0000000000000000, swadian_face_old_2],
   ["quick_battle_troop_2","BNDESCS Shooter","BNDESCS Shooter", tf_hero|tf_female,0,0,fac_kingdom_1,
-   [itm_sword_medieval_b,itm_mk4b_kai,itm_ammo1,itm_ammo1,
+   [itm_mk4b_kai,itm_eammo,itm_ammo1,itm_ammo1,
     itm_kettle_hat,itm_ragged_outfit,itm_leather_boots,itm_splinted_leather_greaves],
    str_12|agi_14|int_11|cha_18|level(22),wp_one_handed (460) | wp_two_handed (110) | wp_polearm (110) | wp_archery (100) | wp_crossbow (720) | wp_throwing (100),knows_horse_archery_2|knows_riding_3|knows_athletics_4|knows_shield_2|knows_weapon_master_4|knows_power_draw_2|knows_power_throw_1|knows_power_strike_3|knows_ironflesh_4,0x000000007f004000719b69422165b71300000000001d5d1d0000000000000000, swadian_face_old_2],
   ["quick_battle_troop_3","Hegen","Hegen", tf_hero,0,0,fac_kingdom_1,

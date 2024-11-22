@@ -274,7 +274,7 @@ items = [
  ["cartridges","Cartridges", [("cartridge_a",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 41,weight(2.25)|abundance(90)|weapon_length(3)|thrust_damage(1,pierce)|max_ammo(50),imodbits_missile],
  ["ammo","ammo", [("ammo",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 90,weight(0.5)|abundance(1)|weapon_length(3)|thrust_damage(5,pierce)|max_ammo(100),imodbits_missile],
  ["ammo1","ammo1", [("ammo1",0),("ammo1",ixmesh_flying_ammo),("ammo1", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 245,weight(0.5)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(90),imodbits_missile,[],[fac_bndescs]],
- ["eammo","explosive ammo", [("ammo1",0),("ammo1",ixmesh_flying_ammo),("ammo1", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 725,weight(1.0)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(40),imodbits_missile,[
+ ["eammo","explosive ammo", [("eammo",0),("eammo",ixmesh_flying_ammo),("eammo", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 725,weight(1.0)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(40),imodbits_missile,[
     (ti_on_missile_hit, [
         (store_trigger_param_1, ":var_0"),
         (agent_get_party_id, ":var_10", ":var_0"),
@@ -1299,7 +1299,7 @@ items = [
         (play_sound,"snd_alofiremk2gj"),
     ]),
     ],[fac_bndescs] ],
-["mk4b", "mk4b", [("mk4b",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_crossbow|itcf_carry_crossbow_back, 
+["mk4b", "mk4b", [("mk4b",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_next_item_as_melee|itp_two_handed ,itcf_shoot_crossbow|itcf_carry_crossbow_back, 
 875 , weight(5.0)|abundance(110)|difficulty(11)|spd_rtng(80) | shoot_speed(385) | thrust_damage(100 ,  pierce)|max_ammo(10),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
@@ -1308,7 +1308,9 @@ items = [
         (play_sound,"snd_alofiremk2gj"),
     ]),
     ],[fac_bndescs] ],
-["mk4b_kai", "mk4b_kai", [("mk4b_kai",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_crossbow|itcf_carry_crossbow_back, 
+["mk4b_melee", "mk4b", [("mk4b",0)], itp_type_polearm| itp_two_handed|itp_primary|itp_wooden_parry , itcf_carry_spear|itc_staff,
+875 , weight(0.1)|abundance(90)|difficulty(0)|spd_rtng(115) | swing_damage(30, cut)| thrust_damage(40,  pierce)|weapon_length(110),imodbits_polearm,[],[fac_bndescs] ],
+["mk4b_kai", "mk4b_kai", [("mk4b_kai",0)], itp_type_crossbow |itp_merchandise|itp_next_item_as_melee|itp_primary|itp_two_handed ,itcf_shoot_crossbow|itcf_carry_crossbow_back, 
 945 , weight(3.0)|abundance(90)|difficulty(10)|spd_rtng(110) | shoot_speed(450) | thrust_damage(100 ,  pierce)|max_ammo(10),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
@@ -1317,6 +1319,8 @@ items = [
         (play_sound,"snd_alofiremk2gj"),
     ]),
     ],[fac_bndescs] ],
+["mk4b_kai_melee", "mk4b_kai", [("mk4b_kai",0)], itp_type_polearm| itp_two_handed|itp_primary|itp_wooden_parry , itcf_carry_spear|itc_staff,
+945 , weight(0.1)|abundance(90)|difficulty(0)|spd_rtng(110) | swing_damage(36, cut)| thrust_damage(48,  pierce)|weapon_length(130),imodbits_polearm,[],[fac_bndescs] ],
 ["mk6", "mk6", [("mk6",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_crossbow|itcf_carry_crossbow_back, 
 900 , weight(0.5)|abundance(80)|difficulty(10)|spd_rtng(400) | shoot_speed(600) | thrust_damage(60 ,  pierce)|max_ammo(60),imodbits_crossbow,[
     (ti_on_weapon_attack, 
@@ -1342,7 +1346,7 @@ items = [
  [(ti_on_init_item, [(set_position_delta,0,120,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),
 ])]],
 
-["cube_head", "Cube", [("cube_head",0)], itp_type_head_armor   ,0, 824 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
+["cube_head", "Cube", [("cube_head",0)], itp_type_head_armor   ,0, 1 , weight(55.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 
 ["lyre",         "Lyre", [("lyre",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
 ["lute",         "Lute", [("lute",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
