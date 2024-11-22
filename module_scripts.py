@@ -1057,7 +1057,7 @@ scripts = [
       (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_1_archer, "trp_bndescs_mk2rv"),
       (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_2_archer, "trp_bndescs_mk4b_kai"),
       (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_1_cavalry, "trp_shoot_target"),
-      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_2_cavalry, "trp_shoot_target"),
+      (faction_set_slot, "fac_bndescs", slot_faction_quick_battle_tier_2_cavalry, "trp_unpaint_aya"),
 
       #for multiplayer mode
       (assign, "$g_multiplayer_selected_map", multiplayer_scenes_begin),

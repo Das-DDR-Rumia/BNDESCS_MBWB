@@ -649,7 +649,7 @@ troops = [
   ["bndescs_veteran_crossbowman","BNDESCS Veteran Crossbowman","BNDESCS Veteran Crossbowmen",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged|tf_guarantee_shield,0,0,fac_bndescs,
    [itm_sword_medieval_a,itm_mk3presnp,itm_eammo,itm_eammo,
     itm_leather_cap,itm_ragged_outfit,itm_leather_boots],
-   def_attrib|level(23),wp_one_handed (100) | wp_two_handed (100) | wp_polearm (100) | wp_archery (100) | wp_crossbow (460) | wp_throwing (100),knows_common|knows_ironflesh_2|knows_shield_3|knows_power_strike_3|knows_athletics_4,khergit_face_middle_1, khergit_face_older_2],
+   def_attrib|level(28),wp_one_handed (100) | wp_two_handed (100) | wp_polearm (100) | wp_archery (100) | wp_crossbow (720) | wp_throwing (100),knows_common|knows_ironflesh_2|knows_shield_3|knows_power_strike_3|knows_athletics_4,khergit_face_middle_1, khergit_face_older_2],
   ["bndescs_sharpshooter","BNDESCS Sharpshooter","BNDESCS Sharpshooters",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged|tf_guarantee_shield,0,0,fac_bndescs,
    [itm_sword_medieval_b,itm_mk3snp,itm_eammo,itm_eammo,
     itm_kettle_hat,itm_ragged_outfit,itm_leather_boots,itm_splinted_leather_greaves],
@@ -693,7 +693,10 @@ troops = [
   #Test Target
   ["shoot_target","Hit Me Hard","Hit Us Hard",tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
    [itm_cube_head,],
-   def_attrib|agi_21|level(25),wp(720),knows_common|knows_riding_7|knows_horse_archery_5|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
+   str_19 | agi_4 | int_4 | cha_4|level(45),wp(720),knows_common|knows_riding_7|knows_horse_archery_5|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
+  ["unpaint_aya","?Aya?","?Aya?",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
+   [itm_aya_head,itm_bride_dress,itm_sword_of_war],
+   str_19 | agi_25 | int_4 | cha_4|level(45),wp(1000),knows_common|knows_riding_7|knows_horse_archery_5|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
 
 
  ["sarranid_recruit","Sarranid Recruit","Sarranid Recruits",tf_guarantee_boots|tf_guarantee_armor,0,0,fac_kingdom_6,
@@ -2276,8 +2279,7 @@ upgrade(troops,"bndescs_mk5","bndescs_mk6")
 upgrade(troops,"bndescs_mk6","bndescs_mk7")
 
 #For MKIII
-upgrade(troops,"bndescs_trained_crossbowman","bndescs_veteran_crossbowman")
-upgrade(troops,"bndescs_veteran_crossbowman","bndescs_sharpshooter")
+upgrade2(troops,"bndescs_trained_crossbowman","bndescs_veteran_crossbowman","bndescs_sharpshooter")
 
 #For MKIV
 upgrade(troops,"bndescs_mk2rv","bndescs_mk4")
