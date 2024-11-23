@@ -272,9 +272,28 @@ items = [
  ["bolts","Bolts", [("bolt",0),("flying_missile",ixmesh_flying_ammo),("bolt_bag", ixmesh_carry),("bolt_bag_b", ixmesh_carry|imodbit_large_bag)], itp_type_bolts|itp_merchandise|itp_default_ammo|itp_can_penetrate_shield, itcf_carry_quiver_right_vertical, 64,weight(2.25)|abundance(90)|weapon_length(63)|thrust_damage(1,pierce)|max_ammo(29),imodbits_missile],
  ["steel_bolts","Steel Bolts", [("bolt",0),("flying_missile",ixmesh_flying_ammo),("bolt_bag_c", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield, itcf_carry_quiver_right_vertical, 210,weight(2.5)|abundance(20)|weapon_length(63)|thrust_damage(2,pierce)|max_ammo(29),imodbits_missile],
  ["cartridges","Cartridges", [("cartridge_a",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 41,weight(2.25)|abundance(90)|weapon_length(3)|thrust_damage(1,pierce)|max_ammo(50),imodbits_missile],
- ["ammo","ammo", [("ammo",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 90,weight(0.5)|abundance(1)|weapon_length(3)|thrust_damage(5,pierce)|max_ammo(100),imodbits_missile],
+ ["ammo","ammo", [("ammo",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 90,weight(0.5)|abundance(200)|weapon_length(3)|thrust_damage(5,pierce)|max_ammo(100),imodbits_missile,[],[fac_bndescs]],
  ["ammo1","ammo1", [("ammo1",0),("ammo1",ixmesh_flying_ammo),("ammo1", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 245,weight(0.5)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(90),imodbits_missile,[],[fac_bndescs]],
  ["eammo","explosive ammo", [("eammo",0),("eammo",ixmesh_flying_ammo),("eammo", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 725,weight(1.0)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(40),imodbits_missile,[
+    (ti_on_missile_hit, [
+        (store_trigger_param_1, ":var_0"),
+        (agent_get_party_id, ":var_10", ":var_0"),
+        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 5),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (play_sound_at_position,"snd_explosive",pos1,0),
+        (try_for_agents, ":var_1"),
+            (agent_get_position, pos2, ":var_1"),
+            (get_distance_between_positions, ":var_2", pos1, pos2),
+            (agent_get_party_id, ":var_20", ":var_1"),
+            (try_begin),
+                (neg|gt, ":var_2", 500),
+                (neg|eq, ":var_10", ":var_20"),
+                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 60),
+            (try_end),
+        (try_end),
+    ]),
+],[fac_bndescs]],
+["eammo1","explosive ammo", [("eammo1",0),("eammo1",ixmesh_flying_ammo),("eammo1", ixmesh_carry)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 380,weight(0.5)|abundance(100)|weapon_length(1)|thrust_damage(10,blunt)|max_ammo(50),imodbits_missile,[
     (ti_on_missile_hit, [
         (store_trigger_param_1, ":var_0"),
         (agent_get_party_id, ":var_10", ":var_0"),
@@ -1104,6 +1123,9 @@ items = [
 ["im2", "IM2",   [("im2" ,0)], itp_merchandise|itp_type_shield|itp_cant_use_on_horseback|itp_wooden_parry, itcf_carry_board_shield,  
 900 , weight(0.5)|abundance(90)|hit_points(1000)|body_armor(100)|spd_rtng(100)|shield_width(60)|shield_height(180),imodbits_shield,
  [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_pavise_shield_1", ":agent_no", ":troop_no")])],[fac_bndescs]],
+["im3", "IM3",   [("im3" ,0)], itp_merchandise|itp_type_shield|itp_cant_use_on_horseback|itp_wooden_parry, itcf_carry_board_shield,  
+970 , weight(5.5)|abundance(40)|hit_points(1000)|body_armor(150)|spd_rtng(200)|shield_width(70)|shield_height(190),imodbits_shield,
+ [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_pavise_shield_1", ":agent_no", ":troop_no")])],[fac_bndescs]],
 
 ["tab_shield_small_round_a", "Plain Cavalry Shield", [("tableau_shield_small_round_3",0)], itp_merchandise|itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  
 96 , weight(2)|hit_points(160)|body_armor(8)|spd_rtng(105)|shield_width(40),imodbits_shield,
@@ -1254,6 +1276,8 @@ items = [
  [(ti_on_weapon_attack, [(play_sound,"snd_alofire"),(position_move_x, pos1,27),(position_move_y, pos1,36),(particle_system_burst, "psys_pistol_smoke", pos1, 15)])],[fac_bndescs]],
  ["mk2rv", "mk2rv", [("mk2rv",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 400 , weight(1.5)|abundance(160)|difficulty(0)|spd_rtng(140) | shoot_speed(170) | thrust_damage(75 ,pierce)|max_ammo(1)|accuracy(85),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_alofiremk2gj"),(position_move_x, pos1,28),(position_move_y, pos1,35),(particle_system_burst, "psys_pistol_smoke", pos1, 30)])],[fac_bndescs]],
+["mk2rvg", "mk2rvg", [("mk2rvg",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 500 , weight(2.5)|abundance(100)|difficulty(0)|spd_rtng(100) | shoot_speed(60) | thrust_damage(80 ,blunt)|max_ammo(1)|accuracy(95),imodbits_none,
+ [(ti_on_weapon_attack, [(play_sound,"snd_alofiremk2gj"),(position_move_x, pos1,28),(position_move_y, pos1,35),(particle_system_burst, "psys_pistol_smoke", pos1, 30)])],[fac_bndescs]],
 ["mk3", "mk3", [("mk3",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_crossbow|itcf_carry_crossbow_back, 
 250 , weight(1.5)|abundance(250)|difficulty(3)|spd_rtng(9) | shoot_speed(120) | thrust_damage(145 ,  pierce)|max_ammo(1),imodbits_crossbow,[
     (ti_on_weapon_attack, 
@@ -1347,7 +1371,9 @@ items = [
 ])]],
 
 ["cube_head", "Cube", [("cube_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(75.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
-["aya_head", "Unpaint Aya mask", [("aya_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(0.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
+["aya_head", "Unpaint Aya mask", [("aya_head",0)],    itp_always_loot|itp_type_head_armor   ,0, 1 , weight(0.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
+["aya_sword", "Aya's Sword", [("aya_two_handed_sword",0),("aya_two_handed_sword", ixmesh_carry)], itp_type_two_handed_wpn|itp_always_loot| itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back|itcf_show_holster_when_drawn,
+ 995 , weight(0.3)|difficulty(1)|spd_rtng(200) | weapon_length(160)|swing_damage(120 , cut) | thrust_damage(160 ,  pierce),imodbits_sword_high ],
 
 ["lyre",         "Lyre", [("lyre",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
 ["lute",         "Lute", [("lute",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
