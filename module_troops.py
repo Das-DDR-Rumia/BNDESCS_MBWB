@@ -612,32 +612,40 @@ troops = [
    def_attrib|level(9),wp(300),knows_common|knows_ironflesh_2|knows_shield_1|knows_power_strike_2|knows_athletics_1,khergit_face_young_1, khergit_face_old_2],
   ["bndescs_im2","Shield Guard","Shield Guard",tf_guarantee_boots|tf_guarantee_armor,0,0,fac_bndescs,
    [itm_im1,itm_im1,itm_im1,itm_im2,
-    itm_footman_helmet,itm_padded_coif,itm_aketon_green,itm_aketon_green,itm_ragged_outfit,itm_nomad_boots,itm_leather_boots],
-   str_10 | agi_25 | int_4 | cha_4|level(20),wp(220),knows_common|knows_ironflesh_10|knows_shield_2|knows_power_strike_2|knows_athletics_1,khergit_face_young_1, khergit_face_old_2],
-  ["bndescs_pipebomb","BNDESCS Grenader","BNDESCS Grenader",tf_guarantee_boots|tf_guarantee_armor,0,0,fac_bndescs,
+    itm_footman_helmet,itm_ragged_outfit,itm_nomad_boots,itm_leather_boots],
+   str_13 | agi_25 | int_4 | cha_4|level(25),wp(220),knows_common|knows_ironflesh_10|knows_shield_2|knows_power_strike_2|knows_athletics_1,khergit_face_young_1, khergit_face_old_2],
+  ["bndescs_pipebomb","BNDESCS Grenader","BNDESCS Grenader",tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor,0,0,fac_bndescs,
    [itm_pipebomb,itm_pipebomb,itm_im1,itm_im2,
-    itm_footman_helmet,itm_padded_coif,itm_aketon_green,itm_aketon_green,itm_ragged_outfit,itm_nomad_boots,itm_leather_boots],
+    itm_footman_helmet,itm_ragged_outfit,itm_nomad_boots,itm_leather_boots],
   str_19 | agi_25 | int_4 | cha_4|level(35),wp(400),knows_common|knows_ironflesh_10|knows_shield_5|knows_power_strike_2|knows_athletics_1,khergit_face_young_1, khergit_face_old_2],
-  ["bndescs_im3","Carronade Shield","Carronade Shield",tf_guarantee_ranged|tf_guarantee_shield|tf_guarantee_boots|tf_guarantee_armor,0,0,fac_bndescs,
+  ["bndescs_im3","Carronade Shield","Carronade Shield",tf_guarantee_ranged|tf_guarantee_helmet|tf_guarantee_shield|tf_guarantee_boots|tf_guarantee_armor,0,0,fac_bndescs,
    [itm_mk2rvg,itm_eammo1,itm_im1,itm_im3,
-    itm_footman_helmet,itm_padded_coif,itm_aketon_green,itm_aketon_green,itm_ragged_outfit,itm_nomad_boots,itm_leather_boots],
+    itm_footman_helmet,itm_ragged_outfit,itm_nomad_boots,itm_leather_boots],
   str_24 | agi_25 | int_4 | cha_4|level(40),wp(1000),knows_common|knows_ironflesh_10|knows_shield_10|knows_power_strike_2|knows_athletics_1,khergit_face_young_1, khergit_face_old_2],
   ["bndescs_trained_spearman","BNDESCS Light Cavalry","BNDESCS Light Cavalry",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_shield|tf_guarantee_horse,0,0,fac_bndescs,
    [itm_im1,itm_bndescs_hunter,itm_ragged_outfit,
     itm_footman_helmet,itm_nomad_boots,itm_leather_boots],
-   def_attrib|level(16),wp_one_handed (105) | wp_two_handed (105) | wp_polearm (240) | wp_archery (105) | wp_crossbow (105) | wp_throwing (105),knows_common|knows_riding_2|knows_ironflesh_3|knows_shield_2|knows_power_strike_2|knows_athletics_2,khergit_face_young_1, khergit_face_older_2],
+   str_19 | agi_25 | int_4 | cha_4|level(35),wp_one_handed (105) | wp_two_handed (105) | wp_polearm (240) | wp_archery (105) | wp_crossbow (105) | wp_throwing (105),knows_common|knows_riding_2|knows_ironflesh_3|knows_shield_2|knows_power_strike_2|knows_athletics_2,khergit_face_young_1, khergit_face_older_2],
   ["bndescs_veteran_spearman","BNDESCS Armored Cavalry","BNDESCS Armored Cavalry",tf_guarantee_horse|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_shield,0,0,fac_bndescs,
    [itm_im4,itm_bndescs_hunter,itm_im2,itm_ragged_outfit_r,
-    itm_kettle_hat,itm_leather_boots,itm_splinted_leather_greaves,itm_leather_gloves],
+    itm_kettle_hat,itm_leather_boots,itm_leather_gloves],
    def_attrib|level(23),wp_one_handed (115) | wp_two_handed (115) | wp_polearm (460) | wp_archery (115) | wp_crossbow (115) | wp_throwing (115),knows_common|knows_riding_4|knows_ironflesh_5|knows_shield_3|knows_power_strike_4|knows_athletics_3,khergit_face_young_1, khergit_face_older_2],
   ["bndescs_sergeant","BNDESCS Well Armored Cavalry","BNDESCS Well Armored Cavalry",tf_guarantee_horse|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_shield|tf_guarantee_gloves,0,0,fac_bndescs,
    [itm_im4,itm_bndescs_warhorse,itm_im3,itm_ragged_outfit_r,
     itm_bascinet_3, itm_ragged_outfit_r, itm_mail_mittens, itm_mail_boots],
-   def_attrib|level(31),wp_one_handed (130) | wp_two_handed (115) | wp_polearm (720) | wp_archery (115) | wp_crossbow (115) | wp_throwing (115),knows_common|knows_riding_7|knows_ironflesh_10|knows_shield_10|knows_power_strike_10|knows_athletics_10,khergit_face_middle_1, khergit_face_older_2],
+   str_24 | agi_25 | int_4 | cha_4|level(40),wp_one_handed (130) | wp_two_handed (115) | wp_polearm (720) | wp_archery (115) | wp_crossbow (115) | wp_throwing (115),knows_common|knows_riding_7|knows_ironflesh_10|knows_shield_10|knows_power_strike_10|knows_athletics_10,khergit_face_middle_1, khergit_face_older_2],
   ["bndescs_crossbowman","Pistol Troop","Pistol Troop",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged,0,0,fac_bndescs,
    [itm_sword_medieval_a,itm_mk2, itm_ammo, itm_ammo,
     itm_ragged_outfit,itm_nomad_boots,itm_wrapping_boots],
   def_attrib|level(12),wp_one_handed (50) | wp_two_handed (30) | wp_polearm (30) | wp_archery (30) | wp_crossbow (30) | wp_throwing (30) | wp_firearm(180),knows_common|knows_ironflesh_2|knows_shield_1|knows_power_strike_1|knows_athletics_2,khergit_face_young_1, khergit_face_older_2],
+  ["bndescs_mk2rv_h","Cavalry Pistol Shooter","Cavalry Pistol Shooter",tf_guarantee_ranged|tf_guarantee_horse|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_shield,0,0,fac_bndescs,
+   [itm_mk2rv,itm_bndescs_hunter,itm_ammo,itm_ammo,itm_im1,itm_ragged_outfit,
+    itm_kettle_hat,itm_leather_boots,itm_leather_gloves],
+   str_19 | agi_25 | int_4 | cha_4|level(35),wp_one_handed (115) | wp_two_handed (115) | wp_polearm (460) | wp_archery (115) | wp_crossbow (115) | wp_throwing (115)| wp_firearm(480),knows_common|knows_riding_4|knows_ironflesh_5|knows_shield_3|knows_power_strike_4|knows_athletics_3,khergit_face_young_1, khergit_face_older_2],
+   ["bndescs_mk4_h","Cavalry Rifle Man","Cavalry Rifle Man",tf_guarantee_ranged|tf_guarantee_horse|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_shield,0,0,fac_bndescs,
+   [itm_mk4,itm_bndescs_hunter,itm_ammo1,itm_ammo1,itm_im1,itm_ragged_outfit_r,
+    itm_kettle_hat,itm_leather_boots,itm_leather_gloves],
+   str_24 | agi_25 | int_4 | cha_4|level(40),wp_one_handed (115) | wp_two_handed (115) | wp_polearm (460) | wp_archery (115) | wp_crossbow (840) | wp_throwing (115)| wp_firearm(720),knows_common|knows_riding_8|knows_ironflesh_5|knows_shield_3|knows_power_strike_4|knows_athletics_3,khergit_face_young_1, khergit_face_older_2],
   ["bndescs_mk2rv","Standard Pistol Troop","Standard Pistol Troop",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged,0,0,fac_bndescs,
    [itm_sword_medieval_a,itm_mk2rv, itm_ammo, itm_ammo,
     itm_ragged_outfit,itm_nomad_boots,itm_wrapping_boots],
@@ -701,6 +709,9 @@ troops = [
   ["unpaint_aya","?Aya?","?Aya?",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
    [itm_aya_head,itm_bride_dress,itm_aya_sword],
    str_24 | agi_25 | int_4 | cha_4|level(45),wp(1000),knows_common|knows_riding_7|knows_horse_archery_5|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
+  ["cube_rumia","Rumia","Rumia",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
+   [itm_mk4b_kai,itm_eammo,itm_ammo1,itm_ammo1,itm_rumia_cube_head,itm_rumia_body,itm_leather_gloves,itm_leather_boots],
+   str_24 | agi_25 | int_20 | cha_30|level(50),wp_one_handed (85) | wp_two_handed (30) | wp_polearm (1000) | wp_archery (30) | wp_crossbow (1000) | wp_throwing (30) | wp_firearm(1000),knows_common|knows_riding_7|knows_horse_archery_10|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
 
 
  ["sarranid_recruit","Sarranid Recruit","Sarranid Recruits",tf_guarantee_boots|tf_guarantee_armor,0,0,fac_kingdom_6,
@@ -2171,10 +2182,9 @@ troops = [
    [itm_im4,itm_im3,itm_mk4b_kai,itm_ammo1,itm_bndescs_warhorse,
     itm_bascinet_3, itm_ragged_outfit_r, itm_mail_mittens],
    str_24|agi_25|int_12|cha_12|level(40),wp(720),knows_riding_10|knows_athletics_5|knows_shield_4|knows_weapon_master_5|knows_power_throw_3|knows_power_strike_6|knows_ironflesh_6,0x000000081700205434db6df4636db8e400000000001db6e30000000000000000, swadian_face_old_2],
-  ["quick_battle_troop_5","Sverre","Sverre", tf_hero,0,0,fac_kingdom_1,
-   [itm_long_axe, itm_sword_viking_1, itm_light_throwing_axes, itm_tab_shield_round_d,
-    itm_nordic_fighter_helmet, itm_byrnie, itm_leather_gloves, itm_leather_boots],
-   str_15|agi_15|int_12|cha_12|level(21),wpex(110,130,110,80,15,110),knows_riding_1|knows_athletics_5|knows_shield_4|knows_weapon_master_5|knows_power_draw_2|knows_power_throw_4|knows_power_strike_5|knows_ironflesh_5,0x000000048a00024723134e24cb51c91b00000000001dc6aa0000000000000000, swadian_face_old_2],
+  ["quick_battle_troop_5","Rumia","Rumia",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
+   [itm_mk4b_kai,itm_ammo1,itm_ammo1,itm_ammo1,itm_rumia_cube_head,itm_rumia_body,itm_leather_gloves,itm_leather_boots],
+   str_24 | agi_25 | int_20 | cha_30|level(50),wp_one_handed (85) | wp_two_handed (30) | wp_polearm (1000) | wp_archery (30) | wp_crossbow (1000) | wp_throwing (30) | wp_firearm(1000),knows_common|knows_riding_7|knows_horse_archery_10|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
   ["quick_battle_troop_6","Borislav","Borislav", tf_hero,0,0,fac_kingdom_1,
    [itm_strong_bow, itm_barbed_arrows, itm_barbed_arrows, itm_shortened_spear,
     itm_leather_warrior_cap, itm_leather_jerkin, itm_leather_gloves, itm_ankle_boots],
@@ -2270,9 +2280,12 @@ upgrade2(troops,"bndescs_spearman","bndescs_trained_spearman","bndescs_im2")
 upgrade(troops,"bndescs_im2","bndescs_pipebomb")
 upgrade(troops,"bndescs_pipebomb","bndescs_im3")
 
-#For Cavalry
-upgrade(troops,"bndescs_trained_spearman","bndescs_veteran_spearman")
+#For Melee Cavalry
+upgrade2(troops,"bndescs_trained_spearman","bndescs_veteran_spearman","bndescs_mk2rv_h")
 upgrade(troops,"bndescs_veteran_spearman","bndescs_sergeant")
+
+#For Range Cavalry
+upgrade(troops,"bndescs_mk2rv_h","bndescs_mk4_h")
 
 #Range
 #CM=mk2 TC=mk3 VC=mk3presnp SS=mk3snp

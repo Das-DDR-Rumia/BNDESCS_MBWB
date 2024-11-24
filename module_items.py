@@ -1380,13 +1380,14 @@ items = [
 
 ["cube_head", "Cube", [("cube_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(75.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["aya_head", "Unpaint Aya mask", [("aya_head",0)],    itp_unique|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
+["rumia_cube_head", "Cube Rumia Head", [("rumia_cube_head",0)],    itp_unique|itp_type_head_armor   ,0, 7 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate,[(ti_on_init_item,[(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),])],[fac_bndescs] ],
 ["aya_sword", "Aya's Sword", [("aya_two_handed_sword",0),("aya_two_handed_sword", ixmesh_carry)], itp_type_two_handed_wpn| itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back|itcf_show_holster_when_drawn,
  995 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(200) | weapon_length(160)|swing_damage(80 , cut) | thrust_damage(90 ,  pierce),imodbits_sword_high,[(ti_on_init_item, [(set_position_delta,0,20,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),],
  [(set_position_delta,0,25,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,160, 130, 70),(add_point_light, 40, 90),],
  [(set_position_delta,0,30,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,170, 130, 70),(add_point_light, 30, 90),],
  [(set_position_delta,0,40,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,180, 130, 70),(add_point_light, 20, 90),],
  [(set_position_delta,0,50,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,200, 130, 70),(add_point_light, 10, 90),])],[fac_bndescs] ],
-
+["rumia_body", "Rumia's Dress", [("rumia_body",0)], itp_type_body_armor  |itp_covers_legs ,0, 900 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) , imodbits_plate,[],[fac_bndescs]],
 ["lyre",         "Lyre", [("lyre",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
 ["lute",         "Lute", [("lute",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
 
