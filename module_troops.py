@@ -625,11 +625,11 @@ troops = [
   ["bndescs_trained_spearman","BNDESCS Light Cavalry","BNDESCS Light Cavalry",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_shield|tf_guarantee_horse,0,0,fac_bndescs,
    [itm_im1,itm_bndescs_hunter,itm_ragged_outfit,
     itm_footman_helmet,itm_nomad_boots,itm_leather_boots],
-   str_19 | agi_25 | int_4 | cha_4|level(35),wp_one_handed (105) | wp_two_handed (105) | wp_polearm (240) | wp_archery (105) | wp_crossbow (105) | wp_throwing (105),knows_common|knows_riding_2|knows_ironflesh_3|knows_shield_2|knows_power_strike_2|knows_athletics_2,khergit_face_young_1, khergit_face_older_2],
+   def_attrib|level(23),wp_one_handed (105) | wp_two_handed (105) | wp_polearm (240) | wp_archery (105) | wp_crossbow (105) | wp_throwing (105),knows_common|knows_riding_2|knows_ironflesh_3|knows_shield_2|knows_power_strike_2|knows_athletics_2,khergit_face_young_1, khergit_face_older_2],
   ["bndescs_veteran_spearman","BNDESCS Armored Cavalry","BNDESCS Armored Cavalry",tf_guarantee_horse|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_shield,0,0,fac_bndescs,
    [itm_im4,itm_bndescs_hunter,itm_im2,itm_ragged_outfit_r,
     itm_kettle_hat,itm_leather_boots,itm_leather_gloves],
-   def_attrib|level(23),wp_one_handed (115) | wp_two_handed (115) | wp_polearm (460) | wp_archery (115) | wp_crossbow (115) | wp_throwing (115),knows_common|knows_riding_4|knows_ironflesh_5|knows_shield_3|knows_power_strike_4|knows_athletics_3,khergit_face_young_1, khergit_face_older_2],
+   str_19 | agi_25 | int_4 | cha_4|level(23),wp_one_handed (115) | wp_two_handed (115) | wp_polearm (460) | wp_archery (115) | wp_crossbow (115) | wp_throwing (115),knows_common|knows_riding_4|knows_ironflesh_5|knows_shield_3|knows_power_strike_4|knows_athletics_3,khergit_face_young_1, khergit_face_older_2],
   ["bndescs_sergeant","BNDESCS Well Armored Cavalry","BNDESCS Well Armored Cavalry",tf_guarantee_horse|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_shield|tf_guarantee_gloves,0,0,fac_bndescs,
    [itm_im4,itm_bndescs_warhorse,itm_im3,itm_ragged_outfit_r,
     itm_bascinet_3, itm_ragged_outfit_r, itm_mail_mittens, itm_mail_boots],
@@ -1087,7 +1087,7 @@ troops = [
   ["kingdom_4_lord",  "King Ragnar",  "Ragnar",  tf_hero, 0,reserved,  fac_kingdom_4,[itm_hunter,    itm_nobleman_outfit,    itm_leather_boots,              itm_mail_boots,                 itm_cuir_bouilli,  itm_gauntlets,    itm_great_axe,           itm_tab_shield_round_e,    itm_nordic_helmet],            knight_attrib_5,wp(220),knight_skills_5|knows_trainer_4, 0x0000000e2c0c028a068e8c18557b12a500000000001c0fe80000000000000000, nord_face_older_2],
   ["kingdom_5_lord",  "King Graveth",  "Graveth",  tf_hero, 0,reserved,  fac_kingdom_5,[itm_warhorse,  itm_tabard,             itm_leather_boots,              itm_splinted_leather_greaves,   itm_heraldic_mail_with_tabard,  itm_gauntlets,         itm_bastard_sword_b,         itm_tab_shield_heater_cav_b,        itm_spiked_helmet],         knight_attrib_4,wp(220),knight_skills_4|knows_trainer_5, 0x0000000efc04119225848dac5d50d62400000000001d48b80000000000000000, rhodok_face_old_2],
   ["kingdom_6_lord",  "Sultan Hakim",  "Hakim",  tf_hero, 0,reserved,  fac_kingdom_6,[itm_warhorse_sarranid,     itm_mamluke_mail,          itm_sarranid_boots_c,       itm_sarranid_mail_coif,  itm_mail_mittens,      itm_sarranid_cavalry_sword,    itm_tab_shield_small_round_c],         knight_attrib_4,wp(220),knight_skills_5|knows_trainer_5, 0x0000000a4b103354189c71d6d386e8ac00000000001e24eb0000000000000000, rhodok_face_old_2],
-  ["bndescs_lord",  "the Chief of the Chemical Society",  "Liu",  tf_hero|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_ranged, 0,reserved,  fac_bndescs,[itm_mk4b_kai,itm_ammo1,itm_im1,itm_im2,itm_strange_armor,itm_strange_boots,itm_strange_helmet],         knight_attrib_4,wp(1000),knight_skills_5|knows_trainer_5, 0x0000000a4b103354189c71d6d386e8ac00000000001e24eb0000000000000000, rhodok_face_young_2],
+  ["bndescs_lord",  "the Chief of the Chemical Society",  "Liu",  tf_hero|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_ranged, 0,reserved,  fac_bndescs,[itm_mk4b_kai,itm_ammo1,itm_im4,itm_im3,itm_strange_armor,itm_strange_boots,itm_strange_helmet],         knight_attrib_4,wp(1000),knight_skills_5|knows_trainer_5, 0x0000000a4b103354189c71d6d386e8ac00000000001e24eb0000000000000000, rhodok_face_young_2],
 
 
 #    Imbrea   Belinda Ruby Qaelmas Rose    Willow 
@@ -1106,6 +1106,9 @@ troops = [
   ["knight_1_6", "Count Tredian", "Tredian", tf_hero, 0, reserved,  fac_kingdom_1, [itm_hunter,            itm_tabard,      itm_heraldic_mail_with_surcoat,               itm_leather_boots,          itm_mail_boots,                      itm_winged_great_helmet, itm_gauntlets, itm_bastard_sword_b, itm_sword_two_handed_b,  itm_tab_shield_heater_cav_b], knight_attrib_5,wp(240),knight_skills_4|knows_trainer_4, 0x0000000c0a08038736db74c6a396a8e500000000001db8eb0000000000000000, swadian_face_older_2],
   ["knight_1_7", "Count Grainwad", "Grainwad", tf_hero, 0, reserved,  fac_kingdom_1, [itm_hunter,            itm_tabard,      itm_heraldic_mail_with_surcoat,               itm_leather_boots,          itm_mail_boots,                      itm_flat_topped_helmet, itm_gauntlets, itm_bastard_sword_b,   itm_sword_two_handed_b, itm_tab_shield_heater_cav_b], knight_attrib_5,wp(290),knight_skills_4|knows_trainer_4, 0x0000000c1e001500589dae4094aa291c00000000001e37a80000000000000000, swadian_face_young_2],
   ["knight_1_8", "Count Ryis", "Ryis", tf_hero, 0, reserved,  fac_kingdom_1, [itm_warhorse,          itm_nobleman_outfit,     itm_coat_of_plates,                 itm_leather_boots,          itm_splinted_leather_greaves,        itm_winged_great_helmet,  itm_gauntlets,itm_bastard_sword_b,  itm_sword_two_handed_a, itm_tab_shield_heater_d],  knight_attrib_4,wp(250),knight_skills_4, 0x0000000c330855054aa9aa431a48d74600000000001ed5240000000000000000, swadian_face_older_2],
+
+#BNDESCS Knights
+  ["knight_bndescs_1", "2nd Hander", "2nd Hander", tf_hero, 0, reserved,  fac_bndescs, [itm_mk4b_kai,itm_ammo1,itm_ammo1,itm_ammo1,itm_rumia_cube_head,itm_rumia_body,itm_leather_gloves,itm_leather_boots,itm_bndescs_hunter],  knight_attrib_4,wp(750),knight_skills_4, 0x0000000c330855054aa9aa431a48d74600000000001ed5240000000000000000, swadian_face_older_2],
 
 #Swadian younger knights  
   ["knight_1_9", "Count Plais", "Plais", tf_hero, 0, reserved,  fac_kingdom_1, [itm_steppe_horse,      itm_gambeson,     itm_heraldic_mail_with_surcoat,                 itm_blue_hose,              itm_mail_boots,                      itm_nasal_helmet,  itm_scale_gauntlets,     itm_fighting_pick,   itm_tab_shield_heater_c],    knight_attrib_3,wp(160),knight_skills_3, 0x0000000c0f08000458739a9a1476199800000000001fb6f10000000000000000, swadian_face_old_2],
@@ -1238,7 +1241,7 @@ troops = [
   ["knight_6_19", "Emir Dhashwal", "Dhashwal", tf_hero, 0, reserved,  fac_kingdom_6, [itm_warhorse_sarranid,     itm_sarranid_mail_shirt,        itm_sarranid_boots_c,    itm_sarranid_boots_c,       itm_sarranid_mail_coif, itm_lamellar_gauntlets,   itm_fighting_pick,  itm_sword_two_handed_a, itm_tab_shield_small_round_c],   knight_attrib_4,wp(210),knight_skills_4|knows_trainer_5, 0x000000018a08618016ac36bc8b6e4a9900000000001dd45d0000000000000000, rhodok_face_older_2],
   ["knight_6_20", "Emir Biliya", "Biliya", tf_hero, 0, reserved,  fac_kingdom_6, [itm_warhorse_sarranid,     itm_sarranid_cavalry_robe,       itm_sarranid_boots_c,  itm_sarranid_boots_c,       itm_sarranid_veiled_helmet,   itm_lance,      itm_sarranid_cavalry_sword,   itm_tab_shield_small_round_c],  knight_attrib_5,wp(240),knight_skills_5|knows_trainer_6, 0x00000001bd0040c0281a899ac956b94b00000000001ec8910000000000000000, rhodok_face_older_2],
 
-  ["knight_bndescs_1", "2nd Hander", "2nd Hander", tf_hero, 0, reserved,  fac_bndescs, [itm_mk4b,          itm_ammo1,    itm_ammo1,    itm_sarranid_warrior_cap, itm_leather_gloves,     itm_im1,   itm_im2,itm_fur_coat],     knight_attrib_1,wp(720),knight_skills_1|knows_trainer_3, 0x00000000600c2084486195383349eae500000000001d16a30000000000000000, rhodok_face_middle_2],
+  
   
 
 
@@ -2182,7 +2185,7 @@ troops = [
    [itm_im4,itm_im3,itm_mk4b_kai,itm_ammo1,itm_bndescs_warhorse,
     itm_bascinet_3, itm_ragged_outfit_r, itm_mail_mittens],
    str_24|agi_25|int_12|cha_12|level(40),wp(720),knows_riding_10|knows_athletics_5|knows_shield_4|knows_weapon_master_5|knows_power_throw_3|knows_power_strike_6|knows_ironflesh_6,0x000000081700205434db6df4636db8e400000000001db6e30000000000000000, swadian_face_old_2],
-  ["quick_battle_troop_5","Rumia","Rumia",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
+  ["quick_battle_troop_5","Rumia","Rumia",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_kingdom_1,
    [itm_mk4b_kai,itm_ammo1,itm_ammo1,itm_ammo1,itm_rumia_cube_head,itm_rumia_body,itm_leather_gloves,itm_leather_boots],
    str_24 | agi_25 | int_20 | cha_30|level(50),wp_one_handed (85) | wp_two_handed (30) | wp_polearm (1000) | wp_archery (30) | wp_crossbow (1000) | wp_throwing (30) | wp_firearm(1000),knows_common|knows_riding_7|knows_horse_archery_10|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
   ["quick_battle_troop_6","Borislav","Borislav", tf_hero,0,0,fac_kingdom_1,
