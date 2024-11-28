@@ -261,8 +261,8 @@ items = [
 ## Fixed Native 
  ["warhorse_sarranid","Sarranian War Horse", [("warhorse_sarranid",0)], itp_merchandise|itp_type_horse, 0, 1811,abundance(40)|hit_points(165)|body_armor(58)|difficulty(4)|horse_speed(40)|horse_maneuver(44)|horse_charge(32)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_6]],
  ["warhorse_steppe","Steppe Charger", [("warhorse_steppe",0)], itp_merchandise|itp_type_horse, 0, 1400,abundance(45)|hit_points(150)|body_armor(40)|difficulty(4)|horse_speed(40)|horse_maneuver(50)|horse_charge(28)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_3,fac_kingdom_2]],
- ["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(50)|difficulty(2)|horse_speed(63)|horse_maneuver(64)|horse_charge(14)|horse_scale(108),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
- ["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(50)|horse_maneuver(54)|horse_charge(34)|horse_scale(110),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+ ["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(10)|difficulty(2)|horse_speed(41)|horse_maneuver(54)|horse_charge(12)|horse_scale(88),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+ ["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(36)|horse_maneuver(44)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
 ## Fixed Native 
 
 
@@ -1374,9 +1374,8 @@ items = [
 ["im1","IM1", [("im1",0)], itp_type_polearm|itp_primary|itp_wooden_parry, itc_spear, 125 , weight(1.0)|difficulty(1)|spd_rtng(120) | weapon_length(105)|swing_damage(0 , blunt) | thrust_damage(40 ,  pierce),imodbits_none,
  [(ti_on_init_item, [(set_position_delta,0,120,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),
 ])]],
-["im4","IM4", [("im4",0)], itp_couchable|itp_type_polearm|itp_offset_lance|itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_staff|itcf_carry_spear,
- 690 , weight(14.5)|spd_rtng(70) | weapon_length(180)|swing_damage(32 , blunt) | thrust_damage(36 ,  pierce),imodbits_polearm,[(ti_on_init_item, [(set_position_delta,0,20,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),],
- [(set_position_delta,0,25,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,160, 130, 70),(add_point_light, 40, 90),],)],[fac_bndescs] ],
+["im4","IM4", [("im4_l",0)], itp_couchable|itp_type_polearm|itp_offset_lance|itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_staff|itcf_carry_spear,
+ 690 , weight(14.5)|spd_rtng(70) | weapon_length(190)|swing_damage(32 , blunt) | thrust_damage(36 ,  pierce),imodbits_polearm,[],[fac_bndescs] ],
 
 ["cube_head", "Cube", [("cube_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(75.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["aya_head", "Unpaint Aya mask", [("aya_head",0)],    itp_unique|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],

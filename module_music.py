@@ -28,7 +28,7 @@ tracks = [
 ##  ("ambushed", "ambushed.mp3", mtf_sit_attack),
 ##  ("triumph", "triumph.mp3", mtf_sit_attack),
   ("bogus", "cant_find_this.ogg", 0, 0),
-  ("mount_and_blade_title_screen", "mount_and_blade_title_screen.ogg", mtf_sit_main_title|mtf_start_immediately, 0),
+  ("mount_and_blade_title_screen", "Linkage.flac", mtf_sit_main_title|mtf_start_immediately, 0),
 
   ("ambushed_by_neutral", "ambushed_by_neutral.ogg", mtf_sit_ambushed|mtf_sit_siege, mtf_sit_fight|mtf_sit_multiplayer_fight),
   ("ambushed_by_khergit", "ambushed_by_khergit.ogg", mtf_culture_3|mtf_sit_ambushed|mtf_sit_siege, mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_culture_all),
@@ -53,9 +53,9 @@ tracks = [
   ("encounter_hostile_nords", "encounter_hostile_nords.ogg", mtf_persist_until_finished|mtf_sit_encounter_hostile, 0),
   ("escape", "escape.ogg", mtf_persist_until_finished, 0),
 
-  ("fight_1", "fight_1.ogg", mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, 0),
-  ("fight_2", "fight_2.ogg", mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, 0),
-  ("fight_3", "fight_3.ogg", mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, 0),
+  ("fight_1", "The Execution.mp3", mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, 0),
+  ("fight_2", "Megalith - Agnus Dei -.mp3", mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, 0),
+  ("fight_3", "Transparent Blue.mp3", mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, 0),
   ("fight_as_khergit", "fight_as_khergit.ogg", mtf_culture_3|mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, mtf_culture_all),
   ("fight_4", "percussion_battery.ogg", mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, 0),  
   ("fight_as_nord", "fight_as_nord.ogg", mtf_culture_4|mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed, mtf_culture_all),
