@@ -261,8 +261,6 @@ items = [
 ## Fixed Native 
  ["warhorse_sarranid","Sarranian War Horse", [("warhorse_sarranid",0)], itp_merchandise|itp_type_horse, 0, 1811,abundance(40)|hit_points(165)|body_armor(58)|difficulty(4)|horse_speed(40)|horse_maneuver(44)|horse_charge(32)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_6]],
  ["warhorse_steppe","Steppe Charger", [("warhorse_steppe",0)], itp_merchandise|itp_type_horse, 0, 1400,abundance(45)|hit_points(150)|body_armor(40)|difficulty(4)|horse_speed(40)|horse_maneuver(50)|horse_charge(28)|horse_scale(112),imodbits_horse_basic|imodbit_champion, [], [fac_kingdom_3,fac_kingdom_2]],
- ["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(10)|difficulty(2)|horse_speed(41)|horse_maneuver(54)|horse_charge(12)|horse_scale(88),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
- ["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(36)|horse_maneuver(44)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
 ## Fixed Native 
 
 
@@ -274,46 +272,6 @@ items = [
  ["bolts","Bolts", [("bolt",0),("flying_missile",ixmesh_flying_ammo),("bolt_bag", ixmesh_carry),("bolt_bag_b", ixmesh_carry|imodbit_large_bag)], itp_type_bolts|itp_merchandise|itp_default_ammo|itp_can_penetrate_shield, itcf_carry_quiver_right_vertical, 64,weight(2.25)|abundance(90)|weapon_length(63)|thrust_damage(1,pierce)|max_ammo(29),imodbits_missile],
  ["steel_bolts","Steel Bolts", [("bolt",0),("flying_missile",ixmesh_flying_ammo),("bolt_bag_c", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield, itcf_carry_quiver_right_vertical, 210,weight(2.5)|abundance(20)|weapon_length(63)|thrust_damage(2,pierce)|max_ammo(29),imodbits_missile],
  ["cartridges","Cartridges", [("cartridge_a",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 41,weight(2.25)|abundance(90)|weapon_length(3)|thrust_damage(1,pierce)|max_ammo(50),imodbits_missile],
- ["ammo","ammo", [("ammo",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 90,weight(0.5)|abundance(200)|weapon_length(3)|thrust_damage(5,pierce)|max_ammo(100),imodbits_missile,[],[fac_bndescs]],
- ["ammo1","ammo1", [("ammo1",0),("ammo1",ixmesh_flying_ammo),("ammo1", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 245,weight(0.5)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(90),imodbits_missile,[],[fac_bndescs]],
- ["eammo","explosive ammo", [("eammo",0),("eammo",ixmesh_flying_ammo),("eammo", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 725,weight(1.0)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(40),imodbits_missile,[
-    (ti_on_missile_hit, [
-        (store_trigger_param_1, ":var_0"),
-        (agent_get_party_id, ":var_10", ":var_0"),
-        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 5),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (play_sound_at_position,"snd_explosive",pos1,0),
-        (try_for_agents, ":var_1"),
-            (agent_get_position, pos2, ":var_1"),
-            (get_distance_between_positions, ":var_2", pos1, pos2),
-            (agent_get_party_id, ":var_20", ":var_1"),
-            (try_begin),
-                (neg|gt, ":var_2", 500),
-                (neg|eq, ":var_10", ":var_20"),
-                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 60),
-            (try_end),
-        (try_end),
-    ]),
-],[fac_bndescs]],
-["eammo1","explosive ammo", [("eammo1",0),("eammo1",ixmesh_flying_ammo),("eammo1", ixmesh_carry)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 380,weight(0.5)|abundance(100)|weapon_length(1)|thrust_damage(10,blunt)|max_ammo(50),imodbits_missile,[
-    (ti_on_missile_hit, [
-        (store_trigger_param_1, ":var_0"),
-        (agent_get_party_id, ":var_10", ":var_0"),
-        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 5),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (play_sound_at_position,"snd_explosive",pos1,0),
-        (try_for_agents, ":var_1"),
-            (agent_get_position, pos2, ":var_1"),
-            (get_distance_between_positions, ":var_2", pos1, pos2),
-            (agent_get_party_id, ":var_20", ":var_1"),
-            (try_begin),
-                (neg|gt, ":var_2", 500),
-                (neg|eq, ":var_10", ":var_20"),
-                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 60),
-            (try_end),
-        (try_end),
-    ]),
-],[fac_bndescs]],
 
 ["pilgrim_disguise", "Pilgrim Disguise", [("pilgrim_outfit",0)], 0| itp_type_body_armor |itp_covers_legs |itp_civilian ,0, 25 , weight(2)|abundance(100)|head_armor(0)|body_armor(19)|leg_armor(8)|difficulty(0) ,imodbits_cloth ],
 ["pilgrim_hood", "Pilgrim Hood", [("pilgrim_hood",0)], 0| itp_type_head_armor |itp_civilian  ,0, 35 , weight(1.25)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
@@ -478,10 +436,6 @@ items = [
  321 , weight(6)|abundance(100)|head_armor(0)|body_armor(23)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
 ["nomad_vest", "Nomad Vest", [("nomad_vest_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs|itp_civilian ,0,
  360 , weight(7)|abundance(50)|head_armor(0)|body_armor(22)|leg_armor(8)|difficulty(0) ,imodbits_cloth ],
-["ragged_outfit", "School Uniform?", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 390 , weight(2)|abundance(100)|head_armor(5)|body_armor(26)|leg_armor(20)|difficulty(0) ,imodbits_armor,[],[fac_bndescs] ],
- ["ragged_outfit_r", "Armor School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 690 , weight(4)|abundance(70)|head_armor(7)|body_armor(47)|leg_armor(34)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
  #NEW: was padded_leather
 ["padded_leather", "Padded Leather", [("leather_armor_b",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs|itp_civilian,0,
  454 , weight(12)|abundance(100)|head_armor(0)|body_armor(27)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
@@ -1125,12 +1079,6 @@ items = [
 370 , weight(5)|hit_points(550)|body_armor(14)|spd_rtng(78)|shield_width(43)|shield_height(100),imodbits_shield,
  [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_pavise_shield_1", ":agent_no", ":troop_no")])]],
 
-["im2", "IM2",   [("im2" ,0)], itp_merchandise|itp_type_shield|itp_cant_use_on_horseback|itp_wooden_parry, itcf_carry_board_shield,  
-900 , weight(0.5)|abundance(90)|hit_points(200)|body_armor(60)|spd_rtng(100)|shield_width(60)|shield_height(180),imodbits_shield,
- [],[fac_bndescs]],
-["im3", "IM3",   [("im3" ,0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,  
-970 , weight(5.5)|abundance(40)|hit_points(550)|body_armor(150)|spd_rtng(200)|shield_width(70)|shield_height(190),imodbits_shield,
- [],[fac_bndescs]],
 
 ["tab_shield_small_round_a", "Plain Cavalry Shield", [("tableau_shield_small_round_3",0)], itp_merchandise|itp_type_shield|itp_wooden_parry, itcf_carry_round_shield,  
 96 , weight(2)|hit_points(160)|body_armor(8)|spd_rtng(105)|shield_width(40),imodbits_shield,
@@ -1149,63 +1097,7 @@ items = [
 #TODO:
 ["darts",         "Darts", [("dart_b",0),("dart_b_bag", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
 155 , weight(4)|difficulty(1)|spd_rtng(95) | shoot_speed(28) | thrust_damage(22 ,  pierce)|max_ammo(7)|weapon_length(32),imodbits_thrown ],
-["okuu",         "Strange Dolls", [("okuu-fumo-plush",0),("okuu-fumo-plush", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
-950 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(140) | shoot_speed(26) | thrust_damage(40 ,  pierce)|max_ammo(1)|weapon_length(1),imodbits_thrown,[
-    (ti_on_missile_hit, [
-        (store_trigger_param_1, ":var_0"),
-        (agent_get_party_id, ":var_10", ":var_0"),
-        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 20),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 20),
-        (particle_system_burst, "psys_village_fire_big", pos1, 30),
-        (particle_system_burst, "psys_village_fire_big", pos1, 70),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 50),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 40),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 10),
-        (particle_system_burst, "psys_village_fire_big", pos1, 40),
-        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 100),
-        (play_sound_at_position,"snd_explosive",pos1,0),
-        (play_sound_at_position,"snd_explosive",pos1,0),
-        (play_sound_at_position,"snd_explosive",pos1,0),
-        (try_for_agents, ":var_1"),
-            (agent_get_position, pos2, ":var_1"),
-            (get_distance_between_positions, ":var_2", pos1, pos2),
-            (agent_get_party_id, ":var_20", ":var_1"),
-            (try_begin),
-                (neg|gt, ":var_2", 50000),
-                (neg|eq, ":var_10", ":var_20"),
-                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 200),
-            (try_end),
-        (try_end),
-    ]),
-],[fac_bndescs]],
-["pipebomb",         "Homemade Grenade", [("pipebomb",0),("pipebomb", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
-750 , weight(0.1)|abundance(255)|difficulty(0)|spd_rtng(250) | shoot_speed(40) | thrust_damage(20 ,  pierce)|max_ammo(16)|weapon_length(1),imodbits_thrown,[
-    (ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),]),
-    (ti_on_missile_hit, [
-        (store_trigger_param_1, ":var_0"),
-        (agent_get_party_id, ":var_10", ":var_0"),
-        (particle_system_burst, "psys_village_fire_big", pos1, 40),
-        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 30),
-        (play_sound_at_position,"snd_explosive",pos1,0),
-        (try_for_agents, ":var_1"),
-            (agent_get_position, pos2, ":var_1"),
-            (get_distance_between_positions, ":var_2", pos1, pos2),
-            (agent_get_party_id, ":var_20", ":var_1"),
-            (try_begin),
-                (neg|gt, ":var_2", 500),
-                (neg|eq, ":var_10", ":var_20"),
-                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 60),
-            (try_end),
-        (try_end),
-    ]),
-],[fac_bndescs]],
+
 ["war_darts",         "War Darts", [("dart_a",0),("dart_a_bag", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_back|itcf_show_holster_when_drawn, 
 285 , weight(5)|difficulty(1)|spd_rtng(93) | shoot_speed(27) | thrust_damage(25 ,  pierce)|max_ammo(7)|weapon_length(45),imodbits_thrown ],
 
@@ -1273,6 +1165,124 @@ items = [
 683 , weight(3.75)|difficulty(10)|spd_rtng(37) | shoot_speed(70) | thrust_damage(63 ,pierce)|max_ammo(1),imodbits_crossbow ],
 ["flintlock_pistol", "Flintlock Pistol", [("flintlock_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 230 , weight(1.5)|difficulty(0)|spd_rtng(38) | shoot_speed(160) | thrust_damage(45 ,pierce)|max_ammo(1)|accuracy(65),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_pistol_shot"),(position_move_x, pos1,27),(position_move_y, pos1,36),(particle_system_burst, "psys_pistol_smoke", pos1, 15)])]],
+
+
+#BNDESCS Weapon
+
+#Ammo
+["ammo","ammo", [("ammo",0)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 90,weight(0.5)|abundance(200)|weapon_length(3)|thrust_damage(5,pierce)|max_ammo(100),imodbits_missile,[],[fac_bndescs]],
+ ["ammo1","ammo1", [("ammo1",0),("ammo1",ixmesh_flying_ammo),("ammo1", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 245,weight(0.5)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(90),imodbits_missile,[],[fac_bndescs]],
+ ["eammo","explosive ammo", [("eammo",0),("eammo",ixmesh_flying_ammo),("eammo", ixmesh_carry)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield|itp_can_knock_down, itcf_carry_quiver_right_vertical, 725,weight(1.0)|abundance(255)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(40),imodbits_missile,[
+    (ti_on_missile_hit, [
+        (store_trigger_param_1, ":var_0"),
+        (agent_get_party_id, ":var_10", ":var_0"),
+        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 5),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (play_sound_at_position,"snd_explosive",pos1,0),
+        (try_for_agents, ":var_1"),
+            (agent_get_position, pos2, ":var_1"),
+            (get_distance_between_positions, ":var_2", pos1, pos2),
+            (agent_get_party_id, ":var_20", ":var_1"),
+            (try_begin),
+                (neg|gt, ":var_2", 500),
+                (neg|eq, ":var_10", ":var_20"),
+                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 60),
+            (try_end),
+        (try_end),
+    ]),
+],[fac_bndescs]],
+["eammo1","explosive ammo", [("eammo1",0),("eammo1",ixmesh_flying_ammo),("eammo1", ixmesh_carry)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield|itp_default_ammo, 0, 380,weight(0.5)|abundance(100)|weapon_length(1)|thrust_damage(10,blunt)|max_ammo(50),imodbits_missile,[
+    (ti_on_missile_hit, [
+        (store_trigger_param_1, ":var_0"),
+        (agent_get_party_id, ":var_10", ":var_0"),
+        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 5),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (play_sound_at_position,"snd_explosive",pos1,0),
+        (try_for_agents, ":var_1"),
+            (agent_get_position, pos2, ":var_1"),
+            (get_distance_between_positions, ":var_2", pos1, pos2),
+            (agent_get_party_id, ":var_20", ":var_1"),
+            (try_begin),
+                (neg|gt, ":var_2", 500),
+                (neg|eq, ":var_10", ":var_20"),
+                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 60),
+            (try_end),
+        (try_end),
+    ]),
+],[fac_bndescs]],
+
+#Shield
+["im2", "IM2",   [("im2" ,0)], itp_merchandise|itp_type_shield|itp_cant_use_on_horseback|itp_wooden_parry, itcf_carry_board_shield,  
+800 , weight(2.5)|abundance(90)|hit_points(200)|body_armor(40)|spd_rtng(100)|shield_width(50)|shield_height(160),imodbits_shield,
+ [],[fac_bndescs]],
+["im3", "IM3",   [("im3" ,0)], itp_merchandise|itp_type_shield, itcf_carry_board_shield,  
+970 , weight(7.5)|abundance(40)|hit_points(550)|body_armor(150)|spd_rtng(200)|shield_width(70)|shield_height(190),imodbits_shield,
+ [],[fac_bndescs]],
+
+ #Thown
+["okuu",         "Strange Dolls", [("okuu-fumo-plush",0),("okuu-fumo-plush", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
+950 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(40) | shoot_speed(28) | thrust_damage(200 ,  pierce)|max_ammo(1)|weapon_length(1),imodbits_thrown,[
+    (ti_on_missile_hit, [
+        (store_trigger_param_1, ":var_0"),
+        (agent_get_party_id, ":var_10", ":var_0"),
+        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 20),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 20),
+        (particle_system_burst, "psys_village_fire_big", pos1, 30),
+        (particle_system_burst, "psys_village_fire_big", pos1, 70),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 50),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 40),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 10),
+        (particle_system_burst, "psys_village_fire_big", pos1, 40),
+        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 100),
+        (play_sound_at_position,"snd_explosive",pos1,0),
+        (play_sound_at_position,"snd_explosive",pos1,0),
+        (play_sound_at_position,"snd_explosive",pos1,0),
+        (try_for_agents, ":var_1"),
+            (agent_get_position, pos2, ":var_1"),
+            (get_distance_between_positions, ":var_2", pos1, pos2),
+            (agent_get_party_id, ":var_20", ":var_1"),
+            (try_begin),
+                (neg|gt, ":var_2", 50000),
+                (neg|eq, ":var_10", ":var_20"),
+                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 200),
+            (try_end),
+        (try_end),
+    ]),
+],[fac_bndescs]],
+["pipebomb",         "Homemade Grenade", [("pipebomb",0),("pipebomb", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
+750 , weight(0.1)|abundance(255)|difficulty(0)|spd_rtng(250) | shoot_speed(40) | thrust_damage(20 ,  pierce)|max_ammo(16)|weapon_length(1),imodbits_thrown,[
+    (ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),]),
+    (ti_on_missile_hit, [
+        (store_trigger_param_1, ":var_0"),
+        (agent_get_party_id, ":var_10", ":var_0"),
+        (particle_system_burst, "psys_village_fire_big", pos1, 40),
+        (particle_system_burst, "psys_village_fire_smoke_big", pos1, 30),
+        (play_sound_at_position,"snd_explosive",pos1,0),
+        (try_for_agents, ":var_1"),
+            (agent_get_position, pos2, ":var_1"),
+            (get_distance_between_positions, ":var_2", pos1, pos2),
+            (agent_get_party_id, ":var_20", ":var_1"),
+            (try_begin),
+                (neg|gt, ":var_2", 500),
+                (neg|eq, ":var_10", ":var_20"),
+                (agent_deliver_damage_to_agent, ":var_0", ":var_1", 60),
+            (try_end),
+        (try_end),
+    ]),
+],[fac_bndescs]],
+
+#Horse
+["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(10)|difficulty(2)|horse_speed(41)|horse_maneuver(54)|horse_charge(12)|horse_scale(88),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+ ["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(36)|horse_maneuver(44)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+
+#Range
 ["mk1", "mk1", [("mk1",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 200 , weight(0.5)|difficulty(0)|spd_rtng(145) | shoot_speed(95) | thrust_damage(50 ,pierce)|max_ammo(1)|accuracy(70),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_alofire"),(position_move_x, pos1,27),(position_move_y, pos1,36),(particle_system_burst, "psys_pistol_smoke", pos1, 15)])]],
 ["mk2", "mk2", [("mk2",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 300 , weight(1.0)|abundance(250)|difficulty(0)|spd_rtng(130) | shoot_speed(130) | thrust_damage(60 ,pierce)|max_ammo(1)|accuracy(80),imodbits_none,
@@ -1287,8 +1297,8 @@ items = [
 250 , weight(1.5)|abundance(250)|difficulty(3)|spd_rtng(9) | shoot_speed(120) | thrust_damage(145 ,  pierce)|max_ammo(1),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 100),
-        (particle_system_burst, "psys_torch_fire", pos1, 100),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
+        (particle_system_burst, "psys_torch_fire", pos1, 10),
         (play_sound,"snd_alofiremk3"),
     ]),
     ],[fac_bndescs] ],
@@ -1296,8 +1306,8 @@ items = [
 350 , weight(2.0)|abundance(160)|difficulty(7)|spd_rtng(11) | shoot_speed(135) | thrust_damage(160 ,  blunt)|max_ammo(1),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 100),
-        (particle_system_burst, "psys_torch_fire", pos1, 100),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
+        (particle_system_burst, "psys_torch_fire", pos1, 10),
         (play_sound,"snd_alofiremk3"),
     ]),
     ], [fac_bndescs]],
@@ -1305,8 +1315,8 @@ items = [
 425 , weight(2.5)|abundance(160)|difficulty(9)|spd_rtng(8) | shoot_speed(195) | thrust_damage(180 ,  pierce)|max_ammo(1),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 100),
-        (particle_system_burst, "psys_torch_fire", pos1, 100),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
+        (particle_system_burst, "psys_torch_fire", pos1, 10),
         (play_sound,"snd_alofiremk3"),
     ]),
     ],[fac_bndescs] ],
@@ -1315,7 +1325,7 @@ items = [
     (ti_on_weapon_attack, 
     [
         (particle_system_burst, "psys_pistol_smoke", pos1, 10),
-        (particle_system_burst, "psys_torch_fire", pos1, 15),
+        (particle_system_burst, "psys_torch_fire", pos1, 5),
         (play_sound,"snd_alofiremk3"),
     ]),
     ],[fac_bndescs]],
@@ -1323,8 +1333,8 @@ items = [
 575 , weight(2.5)|abundance(230)|difficulty(9)|spd_rtng(120) | shoot_speed(295) | thrust_damage(68 ,  pierce)|max_ammo(1),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
-        (particle_system_burst, "psys_torch_fire", pos1, 15),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 5),
+        (particle_system_burst, "psys_torch_fire", pos1, 5),
         (play_sound,"snd_alofiremk2gj"),
     ]),
     ],[fac_bndescs] ],
@@ -1332,8 +1342,8 @@ items = [
 875 , weight(5.0)|abundance(110)|difficulty(11)|spd_rtng(80) | shoot_speed(385) | thrust_damage(72 ,  pierce)|max_ammo(10),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
-        (particle_system_burst, "psys_torch_fire", pos1, 15),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 5),
+        (particle_system_burst, "psys_torch_fire", pos1, 5),
         (play_sound,"snd_alofiremk2gj"),
     ]),
     ],[fac_bndescs] ],
@@ -1343,8 +1353,8 @@ items = [
 945 , weight(3.0)|abundance(90)|difficulty(10)|spd_rtng(110) | shoot_speed(450) | thrust_damage(75 ,  pierce)|max_ammo(10),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
-        (particle_system_burst, "psys_torch_fire", pos1, 15),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 5),
+        (particle_system_burst, "psys_torch_fire", pos1, 5),
         (play_sound,"snd_alofiremk2gj"),
     ]),
     ],[fac_bndescs] ],
@@ -1354,8 +1364,8 @@ items = [
 900 , weight(0.5)|abundance(80)|difficulty(10)|spd_rtng(400) | shoot_speed(600) | thrust_damage(53 ,  pierce)|max_ammo(60),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
-        (particle_system_burst, "psys_torch_fire", pos1, 15),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 5),
+        (particle_system_burst, "psys_torch_fire", pos1, 5),
         (play_sound,"snd_alofiremk3"),
     ]),
     ],[fac_bndescs] ],
@@ -1363,20 +1373,20 @@ items = [
 975 , weight(3.5)|abundance(10)|difficulty(12)|spd_rtng(400) | shoot_speed(600) | thrust_damage(65 ,  pierce)|max_ammo(60),imodbits_crossbow,[
     (ti_on_weapon_attack, 
     [
-        (particle_system_burst, "psys_pistol_smoke", pos1, 10),
-        (particle_system_burst, "psys_torch_fire", pos1, 15),
+        (particle_system_burst, "psys_pistol_smoke", pos1, 5),
+        (particle_system_burst, "psys_torch_fire", pos1, 5),
         (play_sound,"snd_alofiremk3"),
     ]),
     ],[fac_bndescs] ],
-["torch",         "Torch", [("club",0)], itp_type_one_handed_wpn|itp_primary, itc_scimitar, 11 , weight(2.5)|difficulty(0)|spd_rtng(95) | weapon_length(95)|swing_damage(11 , blunt) | thrust_damage(0 ,  pierce),imodbits_none,
- [(ti_on_init_item, [(set_position_delta,0,60,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),
-])]],
-["im1","IM1", [("im1",0)], itp_type_polearm|itp_primary|itp_wooden_parry, itc_spear, 125 , weight(1.0)|difficulty(1)|spd_rtng(120) | weapon_length(105)|swing_damage(0 , blunt) | thrust_damage(40 ,  pierce),imodbits_none,
- [(ti_on_init_item, [(set_position_delta,0,120,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),
+
+#Melee
+["im1","IM1", [("im1",0)], itp_type_polearm|itp_primary|itp_wooden_parry, itc_spear, 125 , weight(2.0)|difficulty(1)|spd_rtng(120) | weapon_length(105)|swing_damage(0 , blunt) | thrust_damage(40 ,  pierce),imodbits_none,
+ [(ti_on_init_item, [(set_position_delta,0,120,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 60, 90),
 ])]],
 ["im4","IM4", [("im4_l",0)], itp_couchable|itp_type_polearm|itp_offset_lance|itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_staff|itcf_carry_spear,
- 690 , weight(14.5)|spd_rtng(70) | weapon_length(190)|swing_damage(32 , blunt) | thrust_damage(36 ,  pierce),imodbits_polearm,[],[fac_bndescs] ],
+ 690 , weight(8.5)|spd_rtng(70) | weapon_length(190)|swing_damage(32 , blunt) | thrust_damage(36 ,  pierce),imodbits_polearm,[],[fac_bndescs] ],
 
+#armor
 ["cube_head", "Cube", [("cube_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(75.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["aya_head", "Unpaint Aya mask", [("aya_head",0)],    itp_unique|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["rumia_cube_head", "Cube Rumia Head", [("rumia_cube_head",0)],    itp_unique|itp_type_head_armor   ,0, 7 , weight(0.1)|abundance(1)|head_armor(70)|body_armor(20)|leg_armor(20)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
@@ -1387,6 +1397,16 @@ items = [
  [(set_position_delta,0,40,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,180, 130, 70),(add_point_light, 20, 90),],
  [(set_position_delta,0,50,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,200, 130, 70),(add_point_light, 10, 90),])],[fac_bndescs] ],
 ["rumia_body", "Rumia's Dress", [("rumia_body",0)], itp_type_body_armor  |itp_covers_legs ,0, 900 , weight(0.1)|abundance(1)|head_armor(10)|body_armor(60)|leg_armor(50)|difficulty(0) , imodbits_plate,[],[fac_bndescs]],
+["ragged_outfit", "School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 390 , weight(2)|abundance(100)|head_armor(5)|body_armor(26)|leg_armor(20)|difficulty(0) ,imodbits_armor,[],[fac_bndescs] ],
+ ["ragged_outfit_r", "Armor School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 690 , weight(4)|abundance(70)|head_armor(7)|body_armor(47)|leg_armor(34)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
+
+#BNDESCS END
+
+["torch",         "Torch", [("club",0)], itp_type_one_handed_wpn|itp_primary, itc_scimitar, 11 , weight(2.5)|difficulty(0)|spd_rtng(95) | weapon_length(95)|swing_damage(11 , blunt) | thrust_damage(0 ,  pierce),imodbits_none,
+ [(ti_on_init_item, [(set_position_delta,0,60,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),
+])]],
 ["lyre",         "Lyre", [("lyre",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
 ["lute",         "Lute", [("lute",0)], itp_type_shield|itp_wooden_parry|itp_civilian, itcf_carry_bow_back,  118 , weight(2.5)|hit_points(480)|body_armor(1)|spd_rtng(82)|weapon_length(90),0 ],
 
