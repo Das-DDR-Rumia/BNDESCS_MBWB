@@ -45,11 +45,9 @@ game_menus = [
        [(jump_to_menu, "mnu_start_game_1"),
         (troop_add_item,"trp_player","itm_mk2rv",0),
         (troop_add_item,"trp_player","itm_ammo",0),
-        (troop_add_item,"trp_player","itm_im1",0),
         (troop_add_item,"trp_player","itm_ragged_outfit",0),
         (troop_add_item,"trp_player","itm_smoked_fish",0),
-        (troop_add_item,"trp_player","itm_smoked_fish",0),
-        (party_add_members,"p_main_party","trp_bndescs_0",10),
+        (party_add_members,"p_main_party","trp_bndescs_0",2),
         (party_set_bandit_attraction,"p_main_party",90),
         ]
         
@@ -62,7 +60,7 @@ game_menus = [
          (troop_raise_attribute, "trp_player",ca_agility,1000),
          (troop_raise_attribute, "trp_player",ca_intelligence,-3),
          (troop_raise_skill, "trp_player","skl_riding",10),
-         (troop_raise_skill, "trp_player","skl_power_draw",5),
+         (troop_raise_skill, "trp_player","skl_power_throw",5),
          (troop_add_item,"trp_player","itm_okuu",0),
          (troop_add_item,"trp_player","itm_okuu",0),
          (troop_add_item,"trp_player","itm_okuu",0),

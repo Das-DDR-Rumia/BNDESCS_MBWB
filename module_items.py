@@ -405,9 +405,6 @@ items = [
  10 , weight(1)|abundance(100)|head_armor(0)|body_armor(7)|leg_armor(1)|difficulty(0) ,imodbits_cloth ],
 ["robe", "Robe", [("robe",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  31 , weight(1.5)|abundance(100)|head_armor(0)|body_armor(8)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
-#NEW: was coarse_tunic
-["coarse_tunic", "Tunic with vest", [("coarse_tunic_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 7 , weight(0.1)|abundance(200)|head_armor(0)|body_armor(5)|leg_armor(1)|difficulty(0) ,imodbits_cloth ],
 ["leather_apron", "Leather Apron", [("leather_apron",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
  61 , weight(3)|abundance(100)|head_armor(0)|body_armor(12)|leg_armor(7)|difficulty(0) ,imodbits_cloth,[],[fac_bndescs] ],
 #NEW: was tabard_a
@@ -1221,7 +1218,7 @@ items = [
 
  #Thown
 ["okuu",         "Strange Dolls", [("okuu-fumo-plush",0),("okuu-fumo-plush", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
-950 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(40) | shoot_speed(28) | thrust_damage(200 ,  pierce)|max_ammo(1)|weapon_length(1),imodbits_thrown,[
+950 , weight(50)|abundance(1)|difficulty(1)|spd_rtng(4) | shoot_speed(28) | thrust_damage(200 ,  pierce)|max_ammo(1)|weapon_length(1),imodbits_thrown,[
     (ti_on_missile_hit, [
         (store_trigger_param_1, ":var_0"),
         (agent_get_party_id, ":var_10", ":var_0"),
@@ -1244,6 +1241,7 @@ items = [
         (play_sound_at_position,"snd_explosive",pos1,0),
         (play_sound_at_position,"snd_explosive",pos1,0),
         (play_sound_at_position,"snd_explosive",pos1,0),
+        (play_sound_at_position,"snd_waao_ex",pos1,0),
         (try_for_agents, ":var_1"),
             (agent_get_position, pos2, ":var_1"),
             (get_distance_between_positions, ":var_2", pos1, pos2),
@@ -1257,7 +1255,7 @@ items = [
     ]),
 ],[fac_bndescs]],
 ["pipebomb",         "Homemade Grenade", [("pipebomb",0),("pipebomb", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
-750 , weight(0.1)|abundance(255)|difficulty(0)|spd_rtng(250) | shoot_speed(40) | thrust_damage(20 ,  pierce)|max_ammo(16)|weapon_length(1),imodbits_thrown,[
+750 , weight(0.1)|abundance(255)|difficulty(0)|spd_rtng(250) | shoot_speed(40) | thrust_damage(30 ,  pierce)|max_ammo(12)|weapon_length(1),imodbits_thrown,[
     (ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 10, 30),]),
     (ti_on_missile_hit, [
         (store_trigger_param_1, ":var_0"),
@@ -1280,7 +1278,10 @@ items = [
 
 #Horse
 ["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(10)|difficulty(2)|horse_speed(41)|horse_maneuver(54)|horse_charge(12)|horse_scale(88),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
- ["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(36)|horse_maneuver(44)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(36)|horse_maneuver(44)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+
+["aya_warhorse","Aya's Shoes", [("warhorse_chain",0)], itp_unique|itp_type_horse, 0, 1,abundance(1)|hit_points(1000)|body_armor(150)|difficulty(0)|horse_speed(80)|horse_maneuver(80)|horse_charge(120)|horse_scale(1),imodbits_horse_basic|imodbit_champion,
+[(ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),])],[fac_bndescs]],
 
 #Range
 ["mk1", "mk1", [("mk1",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 200 , weight(0.5)|difficulty(0)|spd_rtng(145) | shoot_speed(95) | thrust_damage(50 ,pierce)|max_ammo(1)|accuracy(70),imodbits_none,
@@ -1293,6 +1294,7 @@ items = [
  [(ti_on_weapon_attack, [(play_sound,"snd_alofiremk2gj"),(position_move_x, pos1,28),(position_move_y, pos1,35),(particle_system_burst, "psys_pistol_smoke", pos1, 30)])],[fac_bndescs]],
 ["mk2rvg", "mk2rvg", [("mk2rvg",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 500 , weight(2.5)|abundance(100)|difficulty(0)|spd_rtng(100) | shoot_speed(60) | thrust_damage(80 ,blunt)|max_ammo(1)|accuracy(95),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_alofiremk2gj"),(position_move_x, pos1,28),(position_move_y, pos1,35),(particle_system_burst, "psys_pistol_smoke", pos1, 30)])],[fac_bndescs]],
+
 ["mk3", "mk3", [("mk3",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_crossbow|itcf_carry_crossbow_back, 
 250 , weight(1.5)|abundance(250)|difficulty(3)|spd_rtng(9) | shoot_speed(120) | thrust_damage(145 ,  pierce)|max_ammo(1),imodbits_crossbow,[
     (ti_on_weapon_attack, 
@@ -1399,8 +1401,17 @@ items = [
 ["rumia_body", "Rumia's Dress", [("rumia_body",0)], itp_type_body_armor  |itp_covers_legs ,0, 900 , weight(0.1)|abundance(1)|head_armor(10)|body_armor(60)|leg_armor(50)|difficulty(0) , imodbits_plate,[],[fac_bndescs]],
 ["ragged_outfit", "School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  390 , weight(2)|abundance(100)|head_armor(5)|body_armor(26)|leg_armor(20)|difficulty(0) ,imodbits_armor,[],[fac_bndescs] ],
- ["ragged_outfit_r", "Armor School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+["ragged_outfit_r", "Armor School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  690 , weight(4)|abundance(70)|head_armor(7)|body_armor(47)|leg_armor(34)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
+["coarse_tunic", "Tunic with vest", [("coarse_tunic_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 7 , weight(0.1)|abundance(200)|head_armor(0)|body_armor(5)|leg_armor(1)|difficulty(0) ,imodbits_cloth,[],[fac_bndescs] ],
+
+ #Decorate Armor Skin
+ ["coarse_tunic_d", "Tunic with vest", [("coarse_tunic_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 7 , weight(0.1)|abundance(1)|head_armor(0)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth,[],[fac_bndescs] ],
+ ["ragged_outfit_d", "School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+ 390 , weight(0.1)|abundance(1)|head_armor(0)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor,[],[fac_bndescs] ],
+ ["rumia_cube_head_d", "Cube Rumia Head", [("rumia_cube_head",0)],    itp_merchandise|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(255)|head_armor(0)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
 
 #BNDESCS END
 
