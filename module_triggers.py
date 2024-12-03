@@ -104,18 +104,19 @@ triggers = [
 #    ]),
 
 
-  (5.7, 0, 0.0, 
+#Spawn Aya boss
+  (20, 0, 0, 
   [
-    (store_num_parties_of_template, reg2, "pt_manhunters"),    
-    (lt, reg2, 4)
+    (store_num_parties_of_template,reg2,"pt_boss_test_1"), 
+    (neg|ge,reg2,1),
   ],
   [
-    (set_spawn_radius, 1),
-    (store_add, ":p_town_22_plus_one", "p_town_22", 1),
-    (store_random_in_range, ":selected_town", "p_town_1", ":p_town_22_plus_one"),
-    (spawn_around_party, ":selected_town", "pt_manhunters"),
+    (set_spawn_radius,1), 
+    (store_add,":var_0","p_village_114",1), 
+    (store_random_in_range,":var_1","p_village_114",":var_0"),
+    (spawn_around_party,":var_1","pt_boss_test_1"),
   ]),
-
+#Aya boss End
 
 
   (1.0, 0.0, 0.0, [

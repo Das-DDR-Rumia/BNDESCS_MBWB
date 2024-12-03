@@ -1280,7 +1280,7 @@ items = [
 ["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(10)|difficulty(2)|horse_speed(41)|horse_maneuver(54)|horse_charge(12)|horse_scale(88),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
 ["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(36)|horse_maneuver(44)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
 
-["aya_warhorse","Aya's Shoes", [("warhorse_chain",0)], itp_unique|itp_type_horse, 0, 1,abundance(1)|hit_points(1000)|body_armor(150)|difficulty(0)|horse_speed(80)|horse_maneuver(80)|horse_charge(120)|horse_scale(1),imodbits_horse_basic|imodbit_champion,
+["aya_warhorse","Aya's Shoes", [("warhorse_chain",0)], itp_unique|itp_type_horse, 0, 1,abundance(1)|hit_points(1000)|body_armor(150)|difficulty(0)|horse_speed(100)|horse_maneuver(100)|horse_charge(150)|horse_scale(1),imodbits_horse_basic|imodbit_champion,
 [(ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),])],[fac_bndescs]],
 
 #Range

@@ -811,7 +811,7 @@ common_siege_defender_reinforcement_check = (
    (store_mission_timer_a,":mission_time"),
    (ge,":mission_time",10),
    (store_normalized_team_count,":num_defenders",0),
-   (lt,":num_defenders",8),
+   (lt,":num_defenders",32),
    (add_reinforcements_to_entry,4, 7),
    (val_add,"$defender_reinforcement_stage",1),
    (try_begin),
@@ -851,7 +851,7 @@ common_siege_attacker_reinforcement_check = (
     (store_mission_timer_a,":mission_time"),
     (ge,":mission_time",10),
     (store_normalized_team_count,":num_attackers",1),
-    (lt,":num_attackers",6)
+    (lt,":num_attackers",24)
     ],
   [
     (add_reinforcements_to_entry, 1, 8),
@@ -2225,9 +2225,9 @@ mission_templates = [
     "lead_charge",mtf_battle_mode|mtf_synch_inventory,charge,
     "You lead your men to battle.",
     [
-     (1,mtef_defenders|mtef_team_0,0,aif_start_alarmed,12,[]),
+     (1,mtef_defenders|mtef_team_0,0,aif_start_alarmed,48,[]),
      (0,mtef_defenders|mtef_team_0,0,aif_start_alarmed,0,[]),
-     (4,mtef_attackers|mtef_team_1,0,aif_start_alarmed,12,[]),
+     (4,mtef_attackers|mtef_team_1,0,aif_start_alarmed,48,[]),
      (4,mtef_attackers|mtef_team_1,0,aif_start_alarmed,0,[]),
      ],
     [
@@ -2365,14 +2365,14 @@ mission_templates = [
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_defenders", 0),
-                 (lt,":num_defenders",6)],
+                 (lt,":num_defenders",24)],
            [(add_reinforcements_to_entry,0,7),(assign, "$defender_reinforcement_limit_increased", 0),(val_add,"$defender_reinforcement_stage",1)]),
       
       (1, 0, 5, [(lt,"$attacker_reinforcement_stage",2),
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_attackers", 1),
-                 (lt,":num_attackers",6)],
+                 (lt,":num_attackers",24)],
            [(add_reinforcements_to_entry,3,7),(val_add,"$attacker_reinforcement_stage",1)]),
 
       common_battle_check_victory_condition,
@@ -2490,9 +2490,9 @@ mission_templates = [
     "village_raid",mtf_battle_mode|mtf_synch_inventory,charge,
     "You lead your men to battle.",
     [
-     (3,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,12,[]),
+     (3,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,48,[]),
      (3,mtef_defenders|mtef_team_0,0,aif_start_alarmed,0,[]),
-     (1,mtef_attackers|mtef_team_1,0,aif_start_alarmed,12,[]),
+     (1,mtef_attackers|mtef_team_1,0,aif_start_alarmed,48,[]),
      (1,mtef_attackers|mtef_team_1,0,aif_start_alarmed,0,[]),
      ],
     [
@@ -2546,13 +2546,13 @@ mission_templates = [
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_defenders", 0),
-                 (lt,":num_defenders",6)],
+                 (lt,":num_defenders",24)],
            [(add_reinforcements_to_entry,0,6),(val_add,"$defender_reinforcement_stage",1)]),
       (1, 0, 5, [(lt,"$attacker_reinforcement_stage",2),
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_attackers", 1),
-                 (lt,":num_attackers",6)],
+                 (lt,":num_attackers",24)],
            [(add_reinforcements_to_entry,3,6),(val_add,"$attacker_reinforcement_stage",1)]),
 
       (1, 60, ti_once,
@@ -2896,9 +2896,9 @@ mission_templates = [
     "castle_attack_walls_defenders_sally",mtf_battle_mode|mtf_synch_inventory,-1,
     "You attack the walls of the castle...",
     [
-     (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,12,[]),
+     (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,48,[]),
      (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,0,[]),
-     (3,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,12,[]),
+     (3,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,48,[]),
      (3,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
      ],
     [
@@ -2996,10 +2996,10 @@ mission_templates = [
     "castle_attack_walls_belfry",mtf_battle_mode|mtf_synch_inventory,-1,
     "You attack the walls of the castle...",
     [
-     (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,12,[]),
+     (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,48,[]),
      (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,0,[]),
      (10,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
-     (11,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,7,[]),
+     (11,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,28,[]),
      (15,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
 
      (40,mtef_defenders|mtef_team_0|mtef_archers_first,af_override_horse,aif_start_alarmed,1,[]),
@@ -3077,10 +3077,10 @@ mission_templates = [
     "castle_attack_walls_ladder",mtf_battle_mode|mtf_synch_inventory,-1,
     "You attack the walls of the castle...",
     [
-     (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,12,[]),
+     (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,48,[]),
      (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,0,[]),
      (10,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
-     (11,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,7,[]),
+     (11,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,28,[]),
      (15,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
 
      (40,mtef_defenders|mtef_team_0|mtef_archers_first,af_override_horse,aif_start_alarmed,1,[]),
