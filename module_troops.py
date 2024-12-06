@@ -242,8 +242,8 @@ tf_guarantee_all_wo_ranged = tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_
 
 troops = [
   ["player","Player","Player",tf_hero|tf_unmoveable_in_party_window,no_scene,reserved,fac_player_faction,
-   [],
-   str_5|agi_6|int_10|cha_5,wp_one_handed (31) | wp_two_handed (31) | wp_polearm (100) | wp_archery (31) | wp_crossbow (100) | wp_throwing (100) | wp_firearm(100),knows_inventory_management_10,0,0x000000018000000136db6db6db6db6db00000000001db6db0000000000000000],
+   [itm_rumia_cube_head_d],
+   str_5|agi_6|int_10|cha_5,wp_one_handed (31) | wp_two_handed (31) | wp_polearm (100) | wp_archery (31) | wp_crossbow (100) | wp_throwing (100) | wp_firearm(100),knows_inventory_management_10,0,0x0000000fc00025947bf8e00fc0000e0700000000001c0e800000000000000000],
   ["multiplayer_profile_troop_male","multiplayer_profile_troop_male","multiplayer_profile_troop_male", tf_hero|tf_guarantee_all, 0, 0,fac_commoners,
    [itm_leather_jerkin, itm_leather_boots],
    0, 0, 0, 0x000000018000000136db6db6db6db6db00000000001db6db0000000000000000],
@@ -600,7 +600,7 @@ troops = [
     itm_coarse_tunic,itm_wrapping_boots,itm_nomad_boots,itm_head_wrappings,itm_straw_hat],
    def_attrib|level(5),wp_one_handed (50) | wp_two_handed (30) | wp_polearm (30) | wp_archery (30) | wp_crossbow (250) | wp_throwing (30) | wp_firearm(0),knows_common|knows_power_draw_1|knows_ironflesh_1,0x0000000fc00025947bf8e00fc0000e0700000000001c0e800000000000000000, 0x0000000fc0002594203f1f8fc703d00700000000001e81ff0000000000000000],
   ["okuu_fumo_thrower","Strange Doll Thrower","Strange Doll Throwers",tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_horse,0,0,fac_bndescs,
-   [itm_okuu,itm_okuu,itm_okuu,itm_okuu_sign,itm_strange_armor,itm_strange_boots,itm_aya_warhorse],
+   [itm_okuu,itm_okuu,itm_okuu,itm_okuu_sign,itm_strange_armor,itm_strange_boots,itm_okuu_warhorse],
    def_attrib|level(26),wp_one_handed (50) | wp_two_handed (1000) | wp_polearm (30) | wp_archery (30) | wp_crossbow (50) | wp_throwing (1000) | wp_firearm(0),knows_common|knows_power_throw_10|knows_power_draw_10|knows_ironflesh_10,0x0000000fc00025947bf8e00fc0000e0700000000001c0e800000000000000000, 0x0000000fc0002594203f1f8fc703d00700000000001e81ff0000000000000000],
   ["bndescs_mk1","Pistol Noob","Pistol Noob",tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor,0,0,fac_bndescs,
    [itm_mk1, itm_ammo, itm_ammo, itm_dagger,
@@ -707,7 +707,7 @@ troops = [
    [itm_cube_head,],
    str_19 | agi_4 | int_4 | cha_4|level(45),wp(720),knows_common|knows_riding_7|knows_horse_archery_5|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
   ["unpaint_aya","?Aya?","?Aya?",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
-   [itm_aya_head,itm_bride_dress,itm_aya_sword,itm_aya_warhorse],
+   [itm_aya_head,itm_bride_dress,itm_aya_sword,itm_aya_fan,itm_aya_warhorse],
    str_24 | agi_25 | int_4 | cha_4|level(45),wp(1000),knows_common|knows_riding_10|knows_horse_archery_10|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
   ["cube_rumia","Rumia","Rumia",tf_female|tf_mounted|tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_bndescs,
    [itm_mk4b_kai,itm_eammo,itm_ammo1,itm_ammo1,itm_rumia_cube_head,itm_rumia_body,itm_leather_gloves,itm_leather_boots],
@@ -715,7 +715,7 @@ troops = [
 
 #Quick Battle Player Useable Troop
   ["quick_battle_troop_1","Okuu Lover","Okuu Lover", tf_hero,0,0,fac_kingdom_1,
-   [itm_okuu,itm_okuu,itm_okuu,itm_okuu_sign,
+   [itm_okuu,itm_okuu,itm_okuu,itm_okuu_sign,itm_okuu_warhorse,
     itm_strange_helmet, itm_strange_armor, itm_strange_boots, itm_leather_gloves],
    str_24|agi_25|int_12|cha_12|level(55),wpex(109,1000,132,15,32,1000),knows_riding_3|knows_athletics_5|knows_shield_3|knows_weapon_master_3|knows_power_throw_3|knows_power_strike_2|knows_ironflesh_3,0x0000000e240070cd598bb02b9556428c00000000001eabce0000000000000000, swadian_face_old_2],
   ["quick_battle_troop_2","BNDESCS Shooter","BNDESCS Shooter", tf_hero|tf_female,0,0,fac_kingdom_1,
@@ -723,7 +723,7 @@ troops = [
     itm_kettle_hat,itm_ragged_outfit_r,itm_leather_boots,itm_splinted_leather_greaves],
    str_12|agi_14|int_11|cha_18|level(22),wp_one_handed (460) | wp_two_handed (110) | wp_polearm (110) | wp_archery (100) | wp_crossbow (720) | wp_throwing (100),knows_horse_archery_2|knows_riding_3|knows_athletics_4|knows_shield_2|knows_weapon_master_4|knows_power_draw_2|knows_power_throw_1|knows_power_strike_3|knows_ironflesh_4,0x000000007f004000719b69422165b71300000000001d5d1d0000000000000000, swadian_face_old_2],
   ["quick_battle_troop_3","?Aya?","?Aya?", tf_hero,0,0,fac_kingdom_1,
-   [itm_aya_head,itm_bride_dress,itm_aya_sword,itm_aya_warhorse],
+   [itm_aya_head,itm_bride_dress,itm_aya_fan,itm_aya_sword,itm_aya_warhorse],
    str_19 | agi_25 | int_4 | cha_4|level(45),wp(1000),knows_common|knows_riding_10|knows_horse_archery_10|knows_power_draw_5,rhodok_face_middle_1, rhodok_face_older_2],
   ["quick_battle_troop_4","BNDESCS Elite Cavalry","BNDESCS Elite Cavalry", tf_hero|tf_guarantee_horse,0,0,fac_kingdom_1,
    [itm_im4,itm_im3,itm_mk4b_kai,itm_ammo1,itm_bndescs_warhorse,

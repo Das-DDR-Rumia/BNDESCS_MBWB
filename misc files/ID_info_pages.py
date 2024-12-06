@@ -1,8 +1,9 @@
-ip_morale = 0
-ip_economy = 1
-ip_courtship = 2
-ip_politics = 3
-ip_character_backgrounds = 4
-ip_military_campaigns = 5
+ip_BNDESCS = 0
+ip_morale = 1
+ip_economy = 2
+ip_courtship = 3
+ip_politics = 4
+ip_character_backgrounds = 5
+ip_military_campaigns = 6
 
 

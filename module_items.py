@@ -1277,11 +1277,11 @@ items = [
 ],[fac_bndescs]],
 
 #Horse
-["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(10)|difficulty(2)|horse_speed(41)|horse_maneuver(54)|horse_charge(12)|horse_scale(88),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
-["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1824,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(36)|horse_maneuver(44)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+["bndescs_hunter","Light Horse", [("hunting_horse",0),("hunting_horse",imodbits_horse_good)], itp_merchandise|itp_type_horse, 0, 1110,abundance(120)|hit_points(160)|body_armor(10)|difficulty(2)|horse_speed(58)|horse_maneuver(58)|horse_charge(12)|horse_scale(88),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+["bndescs_warhorse","Heavy Horse", [("warhorse_chain",0)], itp_merchandise|itp_type_horse, 0, 1424,abundance(60)|hit_points(165)|body_armor(90)|difficulty(4)|horse_speed(46)|horse_maneuver(49)|horse_charge(44)|horse_scale(100),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
 
-["aya_warhorse","Aya's Shoes", [("warhorse_chain",0)], itp_unique|itp_type_horse, 0, 1,abundance(1)|hit_points(1000)|body_armor(150)|difficulty(0)|horse_speed(100)|horse_maneuver(100)|horse_charge(150)|horse_scale(1),imodbits_horse_basic|imodbit_champion,
-[(ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),])],[fac_bndescs]],
+["aya_warhorse","Aya's Shoes", [("warhorse_chain",0)], itp_unique|itp_type_horse, 0, 1,abundance(1)|hit_points(1000)|body_armor(150)|difficulty(0)|horse_speed(120)|horse_maneuver(150)|horse_charge(10)|horse_scale(1),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
+["okuu_warhorse","Okuu Army Leader's Horse", [("warhorse_chain",0)], itp_unique|itp_type_horse, 0, 1,abundance(1)|hit_points(1000)|body_armor(200)|difficulty(0)|horse_speed(30)|horse_maneuver(80)|horse_charge(150)|horse_scale(200),imodbits_horse_basic|imodbit_champion,[],[fac_bndescs]],
 
 #Range
 ["mk1", "mk1", [("mk1",0)], itp_type_pistol |itp_merchandise|itp_primary ,itcf_shoot_pistol|itcf_reload_pistol, 200 , weight(0.5)|difficulty(0)|spd_rtng(145) | shoot_speed(95) | thrust_damage(50 ,pierce)|max_ammo(1)|accuracy(70),imodbits_none,
@@ -1387,17 +1387,20 @@ items = [
 ])]],
 ["im4","IM4", [("im4_l",0)], itp_couchable|itp_type_polearm|itp_offset_lance|itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_staff|itcf_carry_spear,
  690 , weight(8.5)|spd_rtng(70) | weapon_length(190)|swing_damage(32 , blunt) | thrust_damage(36 ,  pierce),imodbits_polearm,[],[fac_bndescs] ],
+["aya_sword", "Aya's Sword", [("aya_two_handed_sword",0),("scab_bastardsw_b", ixmesh_carry)], itp_type_two_handed_wpn| itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back|itcf_show_holster_when_drawn,
+ 995 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(80) | weapon_length(160)|swing_damage(80 , cut) | thrust_damage(90 ,  pierce),imodbits_sword_high,[(ti_on_init_item, [(set_position_delta,0,20,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),],
+ [(set_position_delta,0,25,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,160, 130, 70),(add_point_light, 40, 90),],
+ [(set_position_delta,0,30,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,170, 130, 70),(add_point_light, 30, 90),],
+ [(set_position_delta,0,40,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,180, 130, 70),(add_point_light, 20, 90),],
+ [(set_position_delta,0,50,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,200, 130, 70),(add_point_light, 10, 90),])],[fac_bndescs] ],
+["aya_fan", "Aya's Fan", [("aya_fan",0),("aya_fan", ixmesh_carry)], itp_type_one_handed_wpn|itp_unique|itp_primary|itp_bonus_against_shield| itp_unbalanced, itc_scimitar|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
+ 995 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(200) | weapon_length(100)|swing_damage(70 , cut) | thrust_damage(80 ,  pierce),imodbits_sword_high,[(ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),],
+ [(set_position_delta,0,5,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,160, 130, 70),(add_point_light, 40, 90),],)],[fac_bndescs] ],
 
 #armor
 ["cube_head", "Cube", [("cube_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(75.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["aya_head", "Unpaint Aya mask", [("aya_head",0)],    itp_unique|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["rumia_cube_head", "Cube Rumia Head", [("rumia_cube_head",0)],    itp_unique|itp_type_head_armor   ,0, 7 , weight(0.1)|abundance(1)|head_armor(70)|body_armor(20)|leg_armor(20)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
-["aya_sword", "Aya's Sword", [("aya_two_handed_sword",0),("aya_two_handed_sword", ixmesh_carry)], itp_type_two_handed_wpn| itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back|itcf_show_holster_when_drawn,
- 995 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(200) | weapon_length(160)|swing_damage(80 , cut) | thrust_damage(90 ,  pierce),imodbits_sword_high,[(ti_on_init_item, [(set_position_delta,0,20,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),],
- [(set_position_delta,0,25,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,160, 130, 70),(add_point_light, 40, 90),],
- [(set_position_delta,0,30,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,170, 130, 70),(add_point_light, 30, 90),],
- [(set_position_delta,0,40,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,180, 130, 70),(add_point_light, 20, 90),],
- [(set_position_delta,0,50,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,200, 130, 70),(add_point_light, 10, 90),])],[fac_bndescs] ],
 ["rumia_body", "Rumia's Dress", [("rumia_body",0)], itp_type_body_armor  |itp_covers_legs ,0, 900 , weight(0.1)|abundance(1)|head_armor(10)|body_armor(60)|leg_armor(50)|difficulty(0) , imodbits_plate,[],[fac_bndescs]],
 ["ragged_outfit", "School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  390 , weight(2)|abundance(100)|head_armor(5)|body_armor(26)|leg_armor(20)|difficulty(0) ,imodbits_armor,[],[fac_bndescs] ],
@@ -1411,7 +1414,7 @@ items = [
  7 , weight(0.1)|abundance(1)|head_armor(0)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth,[],[fac_bndescs] ],
  ["ragged_outfit_d", "School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  390 , weight(0.1)|abundance(1)|head_armor(0)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor,[],[fac_bndescs] ],
- ["rumia_cube_head_d", "Cube Rumia Head", [("rumia_cube_head",0)],    itp_merchandise|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(255)|head_armor(0)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
+ ["rumia_cube_head_d", "Cube Rumia Head", [("rumia_cube_head",0)],    itp_merchandise|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(0)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
 
 #BNDESCS END
 
