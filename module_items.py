@@ -1386,7 +1386,7 @@ items = [
  [(ti_on_init_item, [(set_position_delta,0,120,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 60, 90),
 ])]],
 ["im4","IM4", [("im4_l",0)], itp_couchable|itp_type_polearm|itp_offset_lance|itp_primary|itp_penalty_with_shield|itp_wooden_parry, itc_staff|itcf_carry_spear,
- 690 , weight(8.5)|spd_rtng(70) | weapon_length(190)|swing_damage(32 , blunt) | thrust_damage(36 ,  pierce),imodbits_polearm,[],[fac_bndescs] ],
+ 690 , weight(8.5)|spd_rtng(70) | weapon_length(250)|swing_damage(32 , blunt) | thrust_damage(36 ,  pierce),imodbits_polearm,[],[fac_bndescs] ],
 ["aya_sword", "Aya's Sword", [("aya_two_handed_sword",0),("scab_bastardsw_b", ixmesh_carry)], itp_type_two_handed_wpn| itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back|itcf_show_holster_when_drawn,
  995 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(80) | weapon_length(160)|swing_damage(80 , cut) | thrust_damage(90 ,  pierce),imodbits_sword_high,[(ti_on_init_item, [(set_position_delta,0,20,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),],
  [(set_position_delta,0,25,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,160, 130, 70),(add_point_light, 40, 90),],
@@ -1399,7 +1399,7 @@ items = [
 
 #armor
 ["cube_head", "Cube", [("cube_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(75.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
-["aya_head", "Unpaint Aya mask", [("aya_head",0)],    itp_unique|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
+["aya_head", "Iron Aya mask", [("aya_head",0)],    itp_unique|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["rumia_cube_head", "Cube Rumia Head", [("rumia_cube_head",0)],    itp_unique|itp_type_head_armor   ,0, 7 , weight(0.1)|abundance(1)|head_armor(70)|body_armor(20)|leg_armor(20)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
 ["rumia_body", "Rumia's Dress", [("rumia_body",0)], itp_type_body_armor  |itp_covers_legs ,0, 900 , weight(0.1)|abundance(1)|head_armor(10)|body_armor(60)|leg_armor(50)|difficulty(0) , imodbits_plate,[],[fac_bndescs]],
 ["ragged_outfit", "School Uniform", [("ragged_outfit_a_new",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
@@ -1408,6 +1408,7 @@ items = [
  690 , weight(4)|abundance(70)|head_armor(7)|body_armor(47)|leg_armor(34)|difficulty(0) ,imodbits_plate,[],[fac_bndescs] ],
 ["coarse_tunic", "Tunic with vest", [("coarse_tunic_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
  7 , weight(0.1)|abundance(200)|head_armor(0)|body_armor(5)|leg_armor(1)|difficulty(0) ,imodbits_cloth,[],[fac_bndescs] ],
+["aya_body", "Aya's Dress", [("aya_body",0)], itp_unique|itp_type_body_armor|itp_covers_legs ,0, 900 , weight(1)|abundance(1)|head_armor(0)|body_armor(100)|leg_armor(100)|difficulty(0) , imodbits_plate],
 
  #Decorate Armor Skin
  ["coarse_tunic_d", "Tunic with vest", [("coarse_tunic_a",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
