@@ -405,8 +405,6 @@ items = [
  10 , weight(1)|abundance(100)|head_armor(0)|body_armor(7)|leg_armor(1)|difficulty(0) ,imodbits_cloth ],
 ["robe", "Robe", [("robe",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  31 , weight(1.5)|abundance(100)|head_armor(0)|body_armor(8)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
-["leather_apron", "Leather Apron", [("leather_apron",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
- 61 , weight(3)|abundance(100)|head_armor(0)|body_armor(12)|leg_armor(7)|difficulty(0) ,imodbits_cloth,[],[fac_bndescs] ],
 #NEW: was tabard_a
 ["tabard", "Tabard", [("tabard_b",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  107 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
@@ -718,8 +716,6 @@ items = [
 240 , weight(5)|difficulty(9)|spd_rtng(88) | weapon_length(108)|swing_damage(41 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
 ["war_axe",         "War Axe", [("war_ax",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back, 
 264 , weight(5)|difficulty(10)|spd_rtng(86) | weapon_length(110)|swing_damage(43 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
-["okuu_sign",         "strange art sign", [("okuu_sign",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back, 
-480 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(300) | weapon_length(140)|swing_damage(120 , cut) | thrust_damage(0 ,  pierce),imodbits_axe,[],[fac_bndescs] ],
 #["double_axe",         "Double Axe", [("dblhead_ax",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back, 359 , weight(6.5)|difficulty(12)|spd_rtng(85) | weapon_length(95)|swing_damage(43 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
 #["great_axe",         "Great Axe", [("great_ax",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back, 415 , weight(7)|difficulty(13)|spd_rtng(82) | weapon_length(120)|swing_damage(45 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],
 
@@ -1337,7 +1333,8 @@ items = [
 ["aya_fan", "Aya's Fan", [("aya_fan",0),("aya_fan", ixmesh_carry)], itp_type_one_handed_wpn|itp_unique|itp_primary|itp_bonus_against_shield| itp_unbalanced, itc_scimitar|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
  995 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(200) | weapon_length(130)|swing_damage(70 , cut) | thrust_damage(80 ,  pierce),imodbits_sword_high,[(ti_on_init_item, [(set_position_delta,0,0,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,150, 130, 70),(add_point_light, 70, 90),],
  [(set_position_delta,0,5,0),(particle_system_add_new, "psys_torch_fire"),(particle_system_add_new, "psys_torch_smoke"),(set_current_color,160, 130, 70),(add_point_light, 40, 90),],)],[fac_bndescs] ],
-
+["okuu_sign",         "strange art sign", [("okuu_sign",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield|itp_wooden_parry, itc_nodachi|itcf_carry_axe_back, 
+480 , weight(0.1)|abundance(1)|difficulty(1)|spd_rtng(300) | weapon_length(140)|swing_damage(120 , cut) | thrust_damage(0 ,  pierce),imodbits_axe,[],[fac_bndescs] ],
  #Thown
 ["okuu",         "Strange Dolls", [("okuu-fumo-plush",0),("okuu-fumo-plush", ixmesh_carry)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_javelin|itcf_carry_quiver_right_vertical|itcf_show_holster_when_drawn, 
 950 , weight(5)|abundance(1)|difficulty(0)|spd_rtng(50) | shoot_speed(30) | thrust_damage(200 ,  pierce)|max_ammo(1)|weapon_length(1),imodbits_thrown,[
@@ -1426,6 +1423,8 @@ items = [
 ],[fac_bndescs]],
 
 #armor
+["leather_apron", "Leather Apron", [("leather_apron",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
+ 61 , weight(3)|abundance(100)|head_armor(0)|body_armor(12)|leg_armor(7)|difficulty(0) ,imodbits_cloth,[],[fac_bndescs] ],
 ["cube_head", "Cube", [("cube_head",0)],  itp_unique|itp_type_head_armor   ,0, 1 , weight(75.5)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["aya_head", "Iron Aya mask", [("aya_head",0)],    itp_unique|itp_type_head_armor   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
 ["aya_hat", "Aya's Headdress", [("aya_hat",0)],    itp_unique|itp_type_head_armor| itp_doesnt_cover_hair   ,0, 1 , weight(0.1)|abundance(1)|head_armor(150)|body_armor(150)|leg_armor(150)|difficulty(0) ,imodbits_plate ],
